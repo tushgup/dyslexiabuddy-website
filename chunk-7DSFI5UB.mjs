@@ -1,0 +1,2 @@
+function a(t,e){return{description:"DyslexiaBuddy is an AI reading app designed to boost reading confidence and speed for people with dyslexia. You can scan text, import books, read aloud, and chat with a virtual AI tutor.",favicon:"https://framerusercontent.com/assets/Gibw4l6ocAt0A2ZTKtvGB9T5q0.png",socialImage:"https://framerusercontent.com/assets/ofdE8CwYyanyXD57QbPCbx5ELw.png",title:"DyslexiaBuddy \u2013\xA0AI Reading Coach for People with Dyslexia"}}export{a};
+//# sourceMappingURL=chunk-7DSFI5UB.mjs.map

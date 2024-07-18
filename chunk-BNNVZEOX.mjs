@@ -1,0 +1,4 @@
+import{a}from"./chunk-7DSFI5UB.mjs";function i(t,e){return{bodyClassName:"framer-body-augiA20Il",breakpoints:[{hash:"72rtr7",mediaQuery:"(min-width: 1440px)"},{hash:"118te23",mediaQuery:"(min-width: 992px) and (max-width: 1439px)"},{hash:"5r5ivb",mediaQuery:"(min-width: 768px) and (max-width: 991px)"},{hash:"5cwnnb",mediaQuery:"(max-width: 767px)"}],customHTMLHeadStart:`<!-- <meta name="apple-itunes-app" content="app-id=1565832172"> -->
+<meta name="apple-itunes-app" content="app-id=1565832172, app-clip-bundle-id=com.onlabs.augmenta11y.Clip, app-clip-display=card">
+`,description:a(t,e).description,elements:{pxCAzEWB_:"testimonials"},title:a(t,e).title||"Home",viewport:"width=device-width"}}var o=1,m={exports:{default:{type:"function",annotations:{framerContractVersion:"1"}},metadataVersion:{type:"variable",annotations:{framerContractVersion:"1"}},__FramerMetadata__:{type:"variable"}}};export{i as a,o as b,m as c};
+//# sourceMappingURL=chunk-BNNVZEOX.mjs.map
