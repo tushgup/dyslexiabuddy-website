@@ -1,0 +1,87 @@
+# DyslexiaBuddy Website - Static Website Setup and Local Development
+
+## Project Overview
+This is a static website for DyslexiaBuddy, an AI reading coach application designed to help people with dyslexia improve their reading confidence and speed. The website features text scanning, book importing, read-aloud functionality, and virtual AI tutor chat.
+
+## Current Status - VERCEL DEPLOYMENT READY
+- Proper repository structure organized for Vercel hosting
+- Clean file organization with assets in dedicated folders
+- Production-ready index.html with improved design
+- Vercel configuration files added
+- All asset paths verified for deployment
+- Blog section added with SEO-optimized articles
+
+## Project Structure
+```
+/
+├── index.html              # Main entry point (production-ready)
+├── blog.html               # Blog listing page
+├── privacy.html            # Privacy Policy page
+├── blog/
+│   ├── 10-reading-strategies-dyslexia.html    # Article: Reading strategies
+│   ├── parents-guide-dyslexia-support.html    # Article: Parent's guide
+│   └── dyslexia-research-evidence-based.html  # Article: Research & evidence
+├── css/
+│   └── styles.css          # All custom styles and animations (including blog styles)
+├── assets/
+│   ├── js/
+│   │   └── script.js       # All JavaScript functionality
+│   └── images/             # All image assets
+├── vercel.json             # Vercel deployment configuration
+├── .gitignore              # Git ignore rules
+└── README.md               # Project documentation
+```
+
+## Technical Details
+- Built with Tailwind CSS (CDN)
+- Uses Phosphor Icons for iconography
+- Google Fonts: Atkinson Hyperlegible (dyslexia-friendly font)
+- Static website - no build process required
+- Optimized for Vercel deployment
+- All functionality works offline
+
+## Features
+- Responsive navigation with mobile menu
+- Interactive demo section with accessibility controls
+- Features grid showcasing app capabilities
+- Testimonials section
+- Pricing section
+- FAQ section
+- Footer with links
+- **Blog section with SEO-optimized articles**
+- **Privacy Policy page with COPPA compliance information**
+
+## Blog Section
+The blog section includes:
+- Blog listing page (blog.html) with article cards featuring actual blog post images
+- 3 SEO-optimized articles covering:
+  1. Reading strategies for children with dyslexia (uses Tips.png)
+  2. Parent's guide to supporting children with dyslexia (uses Parents.png)
+  3. Dyslexia research and evidence-based approaches (uses Understanding Dyslexia.png)
+- Blog post images located in assets/images/blog/ folder:
+  - Tips.png - Featured image for reading strategies article
+  - Parents.png - Featured image for parent's guide article
+  - Understanding Dyslexia.png - Featured image for research article
+- Full SEO meta tags on all pages (title, description, Open Graph, Twitter Cards)
+- JSON-LD structured data for articles
+- Breadcrumb navigation on article pages
+- Related articles section
+- Newsletter signup section
+- Internal linking to main site features
+- Mobile-responsive design
+- Consistent styling with main website
+
+## Privacy Policy Page
+The privacy policy page (privacy.html) includes:
+- Full privacy policy content covering COPPA compliance
+- Data collection and account information
+- Analytics (Firebase) disclosure
+- Advertising policy (ad-free)
+- Notifications policy
+- External links and safety information
+- Contact information
+- Full SEO meta tags (title, description, Open Graph, Twitter Cards)
+- JSON-LD structured data
+- Mobile-responsive design
+- Consistent styling with main website
+- Footer links updated to include privacy policy link
