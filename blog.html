@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - DyslexiaBuddy | Dyslexia Reading Tips, Resources & Research</title>
+    <meta name="description" content="Explore our blog for expert dyslexia reading strategies, parent resources, and the latest research on assistive technology for dyslexia.">
+    <meta name="keywords" content="dyslexia blog, dyslexia reading tips, dyslexia resources, dyslexia research, assistive technology dyslexia">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog - DyslexiaBuddy | Dyslexia Reading Tips & Resources">
+    <meta property="og:description" content="Explore our blog for expert dyslexia reading strategies, parent resources, and the latest research on assistive technology.">
+    <meta property="og:url" content="https://dyslexiabuddy.com/blog">
+    <meta property="og:site_name" content="DyslexiaBuddy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog - DyslexiaBuddy | Dyslexia Reading Tips & Resources">
+    <meta name="twitter:description" content="Explore our blog for expert dyslexia reading strategies, parent resources, and the latest research.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dyslexiabuddy.com/blog">
+    
+    <!-- Google Fonts: Atkinson Hyperlegible -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Atkinson Hyperlegible', 'Verdana', 'sans-serif'],
+                        dyslexic: ['Comic Sans MS', 'Chalkboard SE', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: {
+                            50: '#FDFBF7',
+                            100: '#F7F3E8',
+                            200: '#EFE6D0',
+                        },
+                        slate: {
+                            800: '#2D3748',
+                            900: '#1A202C',
+                        },
+                        brand: {
+                            blue: '#4C51BF',
+                            teal: '#38B2AC',
+                            orange: '#ED8936'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 30px rgba(76, 81, 191, 0.3)',
+                        'glow-orange': '0 0 30px rgba(237, 137, 54, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "DyslexiaBuddy Blog",
+        "description": "Expert articles on dyslexia reading strategies, parent resources, and assistive technology research.",
+        "url": "https://dyslexiabuddy.com/blog",
+        "publisher": {
+            "@type": "Organization",
+            "name": "DyslexiaBuddy",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://dyslexiabuddy.com/assets/images/logo.png"
+            }
+        }
+    }
+    </script>
+</head>
+<body class="bg-cream-50 text-slate-800 font-sans antialiased transition-all duration-300">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full z-50 bg-cream-50/95 backdrop-blur-lg border-b border-cream-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                    <img src="assets/images/app-logo.svg" alt="DyslexiaBuddy" class="h-8 w-auto transition-transform group-hover:scale-110">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#features" class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group">
+                        Features
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#demo" class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group">
+                        Try Demo
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="blog.html" class="text-brand-blue font-medium transition-colors relative group">
+                        Blog
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-blue"></span>
+                    </a>
+                    <a href="index.html#pricing" class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group">
+                        Pricing
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"></span>
+                    </a>
+                    
+                    <a href="index.html#download" class="btn-primary text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg hover:shadow-glow flex items-center gap-2">
+                        <i class="ph-fill ph-apple-logo"></i>
+                        Download
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-slate-800 hover:text-brand-blue p-2 rounded-lg hover:bg-cream-100 transition-colors">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-t border-cream-200 p-6 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html#features" class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2">Features</a>
+                <a href="index.html#demo" class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2">Try Demo</a>
+                <a href="blog.html" class="text-lg font-medium text-brand-blue transition-colors py-2">Blog</a>
+                <a href="index.html#pricing" class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2">Pricing</a>
+                <a href="index.html#download" class="bg-brand-blue text-white text-center py-3 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg">Download for iOS</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="pt-16 pb-12 bg-gradient-to-b from-cream-50 to-white relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-blue-100 text-brand-blue font-semibold text-sm mb-6 border border-blue-200 shadow-sm">
+                <i class="ph-fill ph-newspaper"></i>
+                <span>DyslexiaBuddy Blog</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                Insights & Resources for <span class="text-brand-blue">Better Reading</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Expert tips, research-backed strategies, and helpful resources for families navigating dyslexia.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Articles Grid -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Article 1 -->
+                <article class="blog-card group bg-white rounded-2xl shadow-soft border border-cream-200 overflow-hidden hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="assets/images/blog/Tips.png" alt="Reading strategies for children with dyslexia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-sm text-slate-500 mb-3">
+                            <span class="flex items-center gap-1">
+                                <i class="ph ph-calendar"></i>
+                                Dec 1, 2024
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="ph ph-clock"></i>
+                                8 min read
+                            </span>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-blue transition-colors">
+                            <a href="blog/10-reading-strategies-dyslexia.html">
+                                10 Effective Reading Strategies for Children with Dyslexia
+                            </a>
+                        </h2>
+                        <p class="text-slate-600 mb-4 leading-relaxed">
+                            Discover proven techniques to help your child build reading confidence, from multisensory approaches to assistive technology.
+                        </p>
+                        <a href="blog/10-reading-strategies-dyslexia.html" class="inline-flex items-center gap-2 text-brand-blue font-semibold hover:gap-3 transition-all">
+                            Read More <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card group bg-white rounded-2xl shadow-soft border border-cream-200 overflow-hidden hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="assets/images/blog/Parents.png" alt="Parent's guide to supporting children with dyslexia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-sm text-slate-500 mb-3">
+                            <span class="flex items-center gap-1">
+                                <i class="ph ph-calendar"></i>
+                                Nov 28, 2024
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="ph ph-clock"></i>
+                                10 min read
+                            </span>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-blue transition-colors">
+                            <a href="blog/parents-guide-dyslexia-support.html">
+                                A Parent's Guide to Supporting Your Child with Dyslexia at Home
+                            </a>
+                        </h2>
+                        <p class="text-slate-600 mb-4 leading-relaxed">
+                            Practical tips and resources for parents to create a supportive learning environment and boost their child's confidence.
+                        </p>
+                        <a href="blog/parents-guide-dyslexia-support.html" class="inline-flex items-center gap-2 text-brand-blue font-semibold hover:gap-3 transition-all">
+                            Read More <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card group bg-white rounded-2xl shadow-soft border border-cream-200 overflow-hidden hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="assets/images/blog/Understanding Dyslexia.png" alt="Understanding dyslexia research and evidence-based approaches" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-sm text-slate-500 mb-3">
+                            <span class="flex items-center gap-1">
+                                <i class="ph ph-calendar"></i>
+                                Nov 25, 2024
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="ph ph-clock"></i>
+                                12 min read
+                            </span>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-blue transition-colors">
+                            <a href="blog/dyslexia-research-evidence-based.html">
+                                Understanding Dyslexia: Latest Research and Evidence-Based Approaches
+                            </a>
+                        </h2>
+                        <p class="text-slate-600 mb-4 leading-relaxed">
+                            Explore the latest scientific findings on dyslexia and learn about evidence-based interventions that actually work.
+                        </p>
+                        <a href="blog/dyslexia-research-evidence-based.html" class="inline-flex items-center gap-2 text-brand-blue font-semibold hover:gap-3 transition-all">
+                            Read More <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-br from-cream-50 to-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-cream-200">
+                <div class="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-teal rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <i class="ph-fill ph-envelope-simple text-3xl text-white"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Stay Updated</h2>
+                <p class="text-slate-600 mb-8 max-w-lg mx-auto">
+                    Get the latest dyslexia resources, reading tips, and app updates delivered to your inbox.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-xl border border-cream-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all">
+                    <button type="submit" class="btn-primary text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-glow flex items-center justify-center gap-2">
+                        Subscribe
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-blue/10 via-transparent to-brand-orange/10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Reading?</h2>
+            <p class="text-xl text-slate-400 mb-8">Download DyslexiaBuddy and start your journey to confident reading today.</p>
+             <a href="index.html#download" class="inline-flex items-center gap-3 btn-primary text-white text-lg px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-glow transition transform hover:-translate-y-1">
+                <i class="ph-fill ph-apple-logo text-2xl"></i>
+                <span>Download for iPhone & iPad</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-300 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 text-white">
+                        <img src="assets/images/app-logo.svg" alt="DyslexiaBuddy" class="h-8 w-auto">
+                    </a>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-brand-blue transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">Help</a></li>
+                        <li><a href="privacy.html" class="hover:text-brand-blue transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="blog.html" class="hover:text-brand-blue transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">Media Press Kit</a></li>
+                        <li><a href="#" class="hover:text-brand-blue transition-colors">Published Research</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-900 pt-8 text-sm text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2024 Onlabs Infotech. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-instagram-logo text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-facebook-logo text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
+
