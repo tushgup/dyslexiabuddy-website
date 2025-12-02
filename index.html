@@ -1,558 +1,1040 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DyslexiaBuddy - AI Reading Coach</title>
-    
+
     <!-- Google Fonts: Atkinson Hyperlegible -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <!-- Tailwind Configuration -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Atkinson Hyperlegible', 'Verdana', 'sans-serif'],
-                        dyslexic: ['Comic Sans MS', 'Chalkboard SE', 'sans-serif'],
-                    },
-                    colors: {
-                        cream: {
-                            50: '#FDFBF7',
-                            100: '#F7F3E8',
-                            200: '#EFE6D0',
-                        },
-                        slate: {
-                            800: '#2D3748',
-                            900: '#1A202C',
-                        },
-                        brand: {
-                            blue: '#4C51BF',
-                            teal: '#38B2AC',
-                            orange: '#ED8936'
-                        }
-                    },
-                    boxShadow: {
-                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-                        'glow': '0 0 30px rgba(76, 81, 191, 0.3)',
-                        'glow-orange': '0 0 30px rgba(237, 137, 54, 0.3)',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Atkinson Hyperlegible", "Verdana", "sans-serif"],
+              dyslexic: ["Comic Sans MS", "Chalkboard SE", "sans-serif"],
+            },
+            colors: {
+              cream: {
+                50: "#FDFBF7",
+                100: "#F7F3E8",
+                200: "#EFE6D0",
+              },
+              slate: {
+                800: "#2D3748",
+                900: "#1A202C",
+              },
+              brand: {
+                blue: "#4C51BF",
+                teal: "#38B2AC",
+                orange: "#ED8936",
+              },
+            },
+            boxShadow: {
+              soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+              glow: "0 0 30px rgba(76, 81, 191, 0.3)",
+              "glow-orange": "0 0 30px rgba(237, 137, 54, 0.3)",
+            },
+          },
+        },
+      };
     </script>
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="bg-cream-50 text-slate-800 font-sans antialiased transition-all duration-300">
-
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body
+    class="bg-cream-50 text-slate-800 font-sans antialiased transition-all duration-300"
+  >
     <!-- Notification Banner -->
-    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white text-center py-3 px-4 text-sm font-medium notification-banner border-b border-slate-700">
-        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
-            <span class="inline-flex items-center gap-2">
-                <i class="ph-fill ph-rocket-launch text-brand-orange"></i>
-                <span>Launching DyslexiaBuddy Premium with realistic voices and an AI tutor!</span>
-            </span>
-            <a href="#" class="underline hover:text-brand-orange transition-colors font-semibold">Read launch post <i class="ph-bold ph-arrow-right inline-block"></i></a>
-        </div>
+    <div
+      class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white text-center py-3 px-4 text-sm font-medium notification-banner border-b border-slate-700"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap"
+      >
+        <span class="inline-flex items-center gap-2">
+          <i class="ph-fill ph-rocket-launch text-brand-orange"></i>
+          <span
+            >Launching DyslexiaBuddy Premium with realistic voices and an AI
+            tutor!</span
+          >
+        </span>
+        <a
+          href="#"
+          class="underline hover:text-brand-orange transition-colors font-semibold"
+          >Read launch post <i class="ph-bold ph-arrow-right inline-block"></i
+        ></a>
+      </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 w-full z-50 bg-cream-50/95 backdrop-blur-lg border-b border-cream-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <img src="assets/images/app-logo.svg" alt="DyslexiaBuddy" class="h-8 w-auto transition-transform group-hover:scale-110">
-                </div>
+    <nav
+      class="sticky top-0 w-full z-50 bg-cream-50/95 backdrop-blur-lg border-b border-cream-200 shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <div
+            class="flex-shrink-0 flex items-center gap-2 cursor-pointer group"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+          >
+            <img
+              src="assets/images/app-logo.svg"
+              alt="DyslexiaBuddy"
+              class="h-8 w-auto transition-transform group-hover:scale-110"
+            />
+          </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group">
-                        Features
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"></span>
-                    </a>
-                    <a href="#demo" class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group">
-                        Try Demo
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"></span>
-                    </a>
-                    <a href="blog.html" class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group">
-                        Blog
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"></span>
-                    </a>
-                    <a href="#pricing" class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group">
-                        Pricing
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"></span>
-                    </a>
-                    
-                    <a href="#download" class="btn-primary text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg hover:shadow-glow flex items-center gap-2">
-                        <i class="ph-fill ph-apple-logo"></i>
-                        Download
-                    </a>
-                </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#features"
+              class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group"
+            >
+              Features
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#demo"
+              class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group"
+            >
+              Try Demo
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="blog.html"
+              class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group"
+            >
+              Blog
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"
+              ></span>
+            </a>
+            <a
+              href="#pricing"
+              class="text-slate-800 hover:text-brand-blue font-medium transition-colors relative group"
+            >
+              Pricing
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all group-hover:w-full"
+              ></span>
+            </a>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="text-slate-800 hover:text-brand-blue p-2 rounded-lg hover:bg-cream-100 transition-colors">
-                        <i class="ph ph-list text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+            <a
+              href="#download"
+              class="btn-primary text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg hover:shadow-glow flex items-center gap-2"
+            >
+              <i class="ph-fill ph-apple-logo"></i>
+              Download
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button
+              onclick="toggleMobileMenu()"
+              class="text-slate-800 hover:text-brand-blue p-2 rounded-lg hover:bg-cream-100 transition-colors"
+            >
+              <i class="ph ph-list text-2xl"></i>
+            </button>
+          </div>
         </div>
-        
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-t border-cream-200 p-6 shadow-lg">
-            <div class="flex flex-col space-y-4">
-                <a href="#features" class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2">Features</a>
-                <a href="#demo" class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2">Try Demo</a>
-                <a href="blog.html" class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2">Blog</a>
-                <a href="#pricing" class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2">Pricing</a>
-                <a href="#download" class="bg-brand-blue text-white text-center py-3 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg">Download for iOS</a>
-            </div>
+      </div>
+
+      <!-- Mobile Menu Panel -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-cream-50 border-t border-cream-200 p-6 shadow-lg"
+      >
+        <div class="flex flex-col space-y-4">
+          <a
+            href="#features"
+            class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2"
+            >Features</a
+          >
+          <a
+            href="#demo"
+            class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2"
+            >Try Demo</a
+          >
+          <a
+            href="blog.html"
+            class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2"
+            >Blog</a
+          >
+          <a
+            href="#pricing"
+            class="text-lg font-medium text-slate-800 hover:text-brand-blue transition-colors py-2"
+            >Pricing</a
+          >
+          <a
+            href="#download"
+            class="bg-brand-blue text-white text-center py-3 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg"
+            >Download for iOS</a
+          >
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden relative">
-        <!-- Background decoration -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl"></div>
+      <!-- Background decoration -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Text Content -->
+          <div class="reveal active z-10 text-center lg:text-left">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-blue-100 text-brand-blue font-semibold text-sm mb-6 border border-blue-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <i class="ph-fill ph-users"></i>
+              <span>Trusted by 5,000+ families worldwide</span>
+            </div>
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-6"
+            >
+              Your Personal
+              <span
+                class="text-brand-blue relative whitespace-nowrap inline-block"
+              >
+                Reading Coach
+                <svg
+                  class="absolute w-full h-3 -bottom-1 left-0 text-yellow-300 -z-10 opacity-60"
+                  viewBox="0 0 100 10"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0 5 Q 50 10 100 5"
+                    stroke="currentColor"
+                    stroke-width="8"
+                    fill="none"
+                  />
+                </svg>
+              </span>
+            </h1>
+            <p
+              class="text-lg md:text-xl text-slate-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed"
+            >
+              Boost reading confidence and speed with our app designed
+              specifically for children with dyslexia. Scan pages, listen
+              offline, and chat with your AI tutor.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 mb-6 justify-center lg:justify-start"
+            >
+              <a
+                href="#download"
+                class="btn-primary text-white text-lg px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-glow flex items-center justify-center gap-2"
+              >
+                <i class="ph-fill ph-apple-logo text-xl"></i>
+                <span>Download for iPhone & iPad</span>
+              </a>
+              <button
+                onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'})"
+                class="bg-white hover:bg-gray-50 text-slate-700 border-2 border-slate-200 text-lg px-8 py-4 rounded-xl font-semibold transition-all hover:border-brand-orange hover:shadow-lg flex items-center justify-center gap-2"
+              >
+                <i class="ph-fill ph-play-circle text-brand-orange"></i>
+                <span>See How It Works</span>
+              </button>
+            </div>
+            <div
+              class="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-8 justify-center lg:justify-start"
+            >
+              <div class="flex items-center gap-2">
+                <i class="ph-fill ph-wifi-slash text-gray-400"></i>
+                <span>No internet connection needed</span>
+              </div>
+              <span class="text-gray-300">•</span>
+              <div class="flex items-center gap-2">
+                <i class="ph-fill ph-check-circle text-green-500"></i>
+                <span>Instant detection</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- YouTube Video -->
+          <div class="relative reveal delay-200">
+            <div
+              class="bg-white rounded-2xl shadow-2xl border border-cream-200 overflow-hidden"
+            >
+              <div class="relative pb-[56.25%] h-0 overflow-hidden">
+                <iframe
+                  class="absolute top-0 left-0 w-full h-full"
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/vPBfbrWH7b0?si=578BA1PbyAl5tfjx"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
-                <div class="reveal active z-10 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-blue-100 text-brand-blue font-semibold text-sm mb-6 border border-blue-200 shadow-sm hover:shadow-md transition-shadow">
-                        <i class="ph-fill ph-users"></i>
-                        <span>Trusted by 5,000+ families worldwide</span>
-                    </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-6">
-                        Your Personal <span class="text-brand-blue relative whitespace-nowrap inline-block">
-                            Reading Coach
-                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-yellow-300 -z-10 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
-                            </svg>
-                        </span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                        Boost reading confidence and speed with our app designed specifically for children with dyslexia. Scan pages, listen offline, and chat with your AI tutor.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 mb-6 justify-center lg:justify-start">
-                        <a href="#download" class="btn-primary text-white text-lg px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-glow flex items-center justify-center gap-2">
-                            <i class="ph-fill ph-apple-logo text-xl"></i>
-                            <span>Download for iPhone & iPad</span>
-                        </a>
-                        <button onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'})" class="bg-white hover:bg-gray-50 text-slate-700 border-2 border-slate-200 text-lg px-8 py-4 rounded-xl font-semibold transition-all hover:border-brand-orange hover:shadow-lg flex items-center justify-center gap-2">
-                            <i class="ph-fill ph-play-circle text-brand-orange"></i>
-                            <span>See How It Works</span>
-                        </button>
-                    </div>
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-8 justify-center lg:justify-start">
-                        <div class="flex items-center gap-2">
-                            <i class="ph-fill ph-wifi-slash text-gray-400"></i>
-                            <span>No internet connection needed</span>
-                        </div>
-                        <span class="text-gray-300">•</span>
-                        <div class="flex items-center gap-2">
-                            <i class="ph-fill ph-check-circle text-green-500"></i>
-                            <span>Instant detection</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- YouTube Video -->
-                <div class="relative reveal delay-200">
-                    <div class="bg-white rounded-2xl shadow-2xl border border-cream-200 overflow-hidden">
-                        <div class="relative pb-[56.25%] h-0 overflow-hidden">
-                            <iframe 
-                                class="absolute top-0 left-0 w-full h-full" 
-                                src="https://www.youtube.com/embed/vPBfbrWH7b0" 
-                                title="DyslexiaBuddy Video" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Press Logos Section -->
-            <div class="mt-16 pt-12 border-t border-cream-200">
-                <p class="text-center text-sm text-slate-500 mb-8 font-semibold uppercase tracking-wider">As Featured In</p>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-                    <!-- History Channel -->
-                    <a href="https://twitter.com/HISTORYTV18/status/1220201994024935424" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-16 w-full grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all">
-                        <img src="assets/images/press/history.png" alt="History Channel" class="max-h-12 w-auto object-contain">
-                    </a>
-                    <!-- Your Story -->
-                    <a href="https://yourstory.com/socialstory/2019/05/dyslexia-children-elearning-app-augmenta11y" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-16 w-full grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all">
-                        <img src="assets/images/press/yourstory.png" alt="Your Story" class="max-h-12 w-auto object-contain">
-                    </a>
-                    <!-- The Indian Express / EdexLive -->
-                    <a href="https://www.edexlive.com/people/2019/may/30/this-app-developed-by-20-year-old-mumbai-students-makes-use-of-ar-to-help-dyslexic-children-read-bet-6352.html" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-16 w-full grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all">
-                        <img src="assets/images/press/theindianexpress.webp" alt="The Indian Express / EdexLive" class="max-h-12 w-auto object-contain">
-                    </a>
-                    <!-- News18 -->
-                    <a href="https://www.news18.com/news/tech/apps-from-young-indian-developers-aim-to-fix-colour-blindness-dyslexia-speech-issues-3816467.html" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-16 w-full grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all">
-                        <img src="assets/images/press/news18.svg" alt="News18" class="max-h-12 w-auto object-contain">
-                    </a>
-                    <!-- Qrius -->
-                    <a href="https://qrius.com/making-reading-accessible-to-all/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-16 w-full grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all">
-                        <img src="assets/images/press/qrius.webp" alt="Qrius" class="max-h-12 w-auto object-contain">
-                    </a>
-                    <!-- Gibby Booth / Dyslexia is Our Superpower -->
-                    <a href="https://dyslexiaisoursuperpower.libsyn.com/episode-83-tushar-gupta-and-mudita-sisodia-chat-about-augmenta11y-the-app-they-created-that-helps-people-with-dyslexia-read-using-the-camera-on-a-smartphone" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-16 w-full grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all">
-                        <img src="assets/images/press/gibby.webp" alt="Dyslexia is Our Superpower Podcast" class="max-h-12 w-auto object-contain">
-                    </a>
-                </div>
-            </div>
+        <!-- Press Logos Section -->
+        <div class="mt-16 pt-12 border-t border-cream-200">
+          <p
+            class="text-center text-sm text-slate-500 mb-8 font-semibold uppercase tracking-wider"
+          >
+            As Featured In
+          </p>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center"
+          >
+            <!-- History Channel -->
+            <a
+              href="https://twitter.com/HISTORYTV18/status/1220201994024935424"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center h-16 w-full opacity-80 hover:opacity-100 transition-all"
+            >
+              <img
+                src="assets/images/press/history.png"
+                alt="History Channel"
+                class="max-h-12 w-auto object-contain"
+              />
+            </a>
+            <!-- Your Story -->
+            <a
+              href="https://yourstory.com/socialstory/2019/05/dyslexia-children-elearning-app-augmenta11y"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center h-16 w-full opacity-80 hover:opacity-100 transition-all"
+            >
+              <img
+                src="assets/images/press/yourstory.png"
+                alt="Your Story"
+                class="max-h-12 w-auto object-contain"
+              />
+            </a>
+            <!-- The Indian Express / EdexLive -->
+            <a
+              href="https://www.edexlive.com/people/2019/may/30/this-app-developed-by-20-year-old-mumbai-students-makes-use-of-ar-to-help-dyslexic-children-read-bet-6352.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center h-16 w-full opacity-80 hover:opacity-100 transition-all"
+            >
+              <img
+                src="assets/images/press/theindianexpress.webp"
+                alt="The Indian Express / EdexLive"
+                class="max-h-12 w-auto object-contain"
+              />
+            </a>
+            <!-- News18 -->
+            <a
+              href="https://www.news18.com/news/tech/apps-from-young-indian-developers-aim-to-fix-colour-blindness-dyslexia-speech-issues-3816467.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center h-16 w-full opacity-80 hover:opacity-100 transition-all"
+            >
+              <img
+                src="assets/images/press/news18.svg"
+                alt="News18"
+                class="max-h-12 w-auto object-contain"
+              />
+            </a>
+            <!-- Qrius -->
+            <a
+              href="https://qrius.com/making-reading-accessible-to-all/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center h-16 w-full opacity-80 hover:opacity-100 transition-all"
+            >
+              <img
+                src="assets/images/press/qrius.webp"
+                alt="Qrius"
+                class="max-h-12 w-auto object-contain"
+              />
+            </a>
+            <!-- Gibby Booth / Dyslexia is Our Superpower -->
+            <a
+              href="https://dyslexiaisoursuperpower.libsyn.com/episode-83-tushar-gupta-and-mudita-sisodia-chat-about-augmenta11y-the-app-they-created-that-helps-people-with-dyslexia-read-using-the-camera-on-a-smartphone"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center h-16 w-full opacity-80 hover:opacity-100 transition-all"
+            >
+              <img
+                src="assets/images/press/gibby.webp"
+                alt="Dyslexia is Our Superpower Podcast"
+                class="max-h-12 w-auto object-contain"
+              />
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Interactive Demo Section -->
     <section id="demo" class="py-20 bg-white border-y border-cream-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Pick Your Reading Settings</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose special fonts, colors, and natural sounding voices designed for dyslexia. Try it now:</p>
-            </div>
-
-            <!-- Master Toggle -->
-            <div class="flex items-center justify-center gap-4 mb-10">
-                <span class="text-sm font-bold text-slate-500 uppercase tracking-wider">Original</span>
-                <button id="magic-toggle" onclick="manualMagicToggle()" class="relative w-20 h-10 bg-gray-200 rounded-full transition-all duration-300 focus:outline-none shadow-inner border border-gray-300 hover:border-brand-blue group">
-                    <span class="sr-only">Toggle Dyslexia Mode</span>
-                    <span id="magic-knob" class="absolute left-1 top-1 w-8 h-8 bg-white rounded-full shadow-md transition-all duration-300 flex items-center justify-center">
-                         <i class="ph-bold ph-star text-sm opacity-0 transition-opacity duration-300 text-brand-blue" id="magic-icon"></i>
-                    </span>
-                </button>
-                <span class="text-sm font-bold text-brand-blue uppercase tracking-wider">Dyslexia Friendly</span>
-            </div>
-
-            <div class="bg-gradient-to-br from-cream-50 to-white rounded-3xl p-6 md:p-10 shadow-inner border border-cream-200 transition-all duration-300">
-                <!-- Controls -->
-                <div class="flex flex-col items-center gap-6 mb-8 border-b border-gray-200 pb-8">
-                    <!-- Primary Actions -->
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <button id="btn-listen" onclick="demoSpeak()" class="flex items-center gap-2 bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-3 rounded-xl hover:from-slate-700 hover:to-slate-800 transition-all shadow-lg shadow-slate-200 hover:shadow-xl font-semibold">
-                            <i class="ph-fill ph-play"></i> Listen
-                        </button>
-                        <button id="btn-customize" onclick="toggleCustomize()" class="flex items-center gap-2 bg-white border-2 border-gray-300 text-slate-700 px-6 py-3 rounded-xl hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm font-semibold">
-                            <i class="ph-fill ph-sliders-horizontal"></i> Customize View
-                        </button>
-                    </div>
-
-                    <!-- Hidden Settings Panel -->
-                    <div id="settings-panel" class="hidden w-full animate-fadeIn">
-                        <div class="flex flex-wrap gap-3 justify-center bg-white/70 backdrop-blur-sm p-5 rounded-xl border border-gray-200/50 shadow-sm">
-                            <button id="btn-font" onclick="demoToggleFont()" class="flex items-center gap-2 bg-white border border-gray-300 text-slate-700 px-4 py-2.5 rounded-lg hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm text-sm font-medium">
-                                <i class="ph-fill ph-text-aa"></i> Font
-                            </button>
-                            <button id="btn-spacing" onclick="demoSpacing()" class="flex items-center gap-2 bg-white border border-gray-300 text-slate-700 px-4 py-2.5 rounded-lg hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm text-sm font-medium">
-                                <i class="ph-fill ph-arrows-out-line-horizontal"></i> Spacing
-                            </button>
-                            <button id="btn-height" onclick="demoLineHeight()" class="flex items-center gap-2 bg-white border border-gray-300 text-slate-700 px-4 py-2.5 rounded-lg hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm text-sm font-medium">
-                                <i class="ph-fill ph-arrows-out-line-vertical"></i> Height
-                            </button>
-                            <button id="btn-focus" onclick="demoWordFocus()" class="flex items-center gap-2 bg-white border border-gray-300 text-slate-700 px-4 py-2.5 rounded-lg hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm text-sm font-medium">
-                                <i class="ph-fill ph-scan"></i> Word Focus
-                            </button>
-                            <button id="btn-bg" onclick="demoYellowBg()" class="flex items-center gap-2 bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-2.5 rounded-lg hover:bg-yellow-200 transition-all shadow-sm text-sm font-medium">
-                                <i class="ph-fill ph-paint-bucket"></i> Background
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Live Text Area -->
-                <div id="demo-text-container" class="bg-white p-8 md:p-10 rounded-2xl shadow-sm min-h-[200px] transition-all duration-500 border-2 border-gray-100 hover:border-brand-blue/30">
-                    <p id="demo-text" class="text-xl md:text-2xl text-slate-800 transition-all duration-300 leading-relaxed font-sans" style="font-family: Arial, sans-serif;">
-                        Dyslexia is not a lack of intelligence; it's a creative difference in processing. We help you unlock that creativity by removing the barriers of traditional text.
-                    </p>
-                </div>
-                <p class="text-center mt-4 text-sm text-slate-400 italic">Adjust controls above to change the text.</p>
-            </div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Pick Your Reading Settings
+          </h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Choose special fonts, colors, and natural sounding voices designed
+            for dyslexia. Try it now:
+          </p>
         </div>
+
+        <!-- Master Toggle -->
+        <div class="flex items-center justify-center gap-4 mb-10">
+          <span
+            class="text-sm font-bold text-slate-500 uppercase tracking-wider"
+            >Original</span
+          >
+          <button
+            id="magic-toggle"
+            onclick="manualMagicToggle()"
+            class="relative w-20 h-10 bg-gray-200 rounded-full transition-all duration-300 focus:outline-none shadow-inner border border-gray-300 hover:border-brand-blue group"
+          >
+            <span class="sr-only">Toggle Dyslexia Mode</span>
+            <span
+              id="magic-knob"
+              class="absolute left-1 top-1 w-8 h-8 bg-white rounded-full shadow-md transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="ph-bold ph-star text-sm opacity-0 transition-opacity duration-300 text-brand-blue"
+                id="magic-icon"
+              ></i>
+            </span>
+          </button>
+          <span
+            class="text-sm font-bold text-brand-blue uppercase tracking-wider"
+            >Dyslexia Friendly</span
+          >
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-cream-50 to-white rounded-3xl p-6 md:p-10 shadow-inner border border-cream-200 transition-all duration-300"
+        >
+          <!-- Controls -->
+          <div
+            class="flex flex-col items-center gap-6 mb-8 border-b border-gray-200 pb-8"
+          >
+            <!-- Primary Actions -->
+            <div class="flex flex-wrap justify-center gap-4">
+              <button
+                id="btn-listen"
+                onclick="demoSpeak()"
+                class="flex items-center gap-2 bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-3 rounded-xl hover:from-slate-700 hover:to-slate-800 transition-all shadow-lg shadow-slate-200 hover:shadow-xl font-semibold"
+              >
+                <i class="ph-fill ph-play"></i> Listen
+              </button>
+              <button
+                id="btn-customize"
+                onclick="toggleCustomize()"
+                class="flex items-center gap-2 bg-white border-2 border-gray-300 text-slate-700 px-6 py-3 rounded-xl hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm font-semibold"
+              >
+                <i class="ph-fill ph-sliders-horizontal"></i> Customize View
+              </button>
+            </div>
+
+            <!-- Hidden Settings Panel -->
+            <div id="settings-panel" class="hidden w-full animate-fadeIn">
+              <div
+                class="flex flex-wrap gap-3 justify-center bg-white/70 backdrop-blur-sm p-5 rounded-xl border border-gray-200/50 shadow-sm"
+              >
+                <button
+                  id="btn-font"
+                  onclick="demoToggleFont()"
+                  class="flex items-center gap-2 bg-white border border-gray-300 text-slate-700 px-4 py-2.5 rounded-lg hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm text-sm font-medium"
+                >
+                  <i class="ph-fill ph-text-aa"></i> Font
+                </button>
+                <button
+                  id="btn-spacing"
+                  onclick="demoSpacing()"
+                  class="flex items-center gap-2 bg-white border border-gray-300 text-slate-700 px-4 py-2.5 rounded-lg hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm text-sm font-medium"
+                >
+                  <i class="ph-fill ph-arrows-out-line-horizontal"></i> Spacing
+                </button>
+                <button
+                  id="btn-height"
+                  onclick="demoLineHeight()"
+                  class="flex items-center gap-2 bg-white border border-gray-300 text-slate-700 px-4 py-2.5 rounded-lg hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm text-sm font-medium"
+                >
+                  <i class="ph-fill ph-arrows-out-line-vertical"></i> Height
+                </button>
+                <button
+                  id="btn-focus"
+                  onclick="demoWordFocus()"
+                  class="flex items-center gap-2 bg-white border border-gray-300 text-slate-700 px-4 py-2.5 rounded-lg hover:bg-gray-50 hover:border-brand-blue transition-all shadow-sm text-sm font-medium"
+                >
+                  <i class="ph-fill ph-scan"></i> Word Focus
+                </button>
+                <button
+                  id="btn-bg"
+                  onclick="demoYellowBg()"
+                  class="flex items-center gap-2 bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 py-2.5 rounded-lg hover:bg-yellow-200 transition-all shadow-sm text-sm font-medium"
+                >
+                  <i class="ph-fill ph-paint-bucket"></i> Background
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Text Area -->
+          <div
+            id="demo-text-container"
+            class="bg-white p-8 md:p-10 rounded-2xl shadow-sm min-h-[200px] transition-all duration-500 border-2 border-gray-100 hover:border-brand-blue/30"
+          >
+            <p
+              id="demo-text"
+              class="text-xl md:text-2xl text-slate-800 transition-all duration-300 leading-relaxed font-sans"
+              style="font-family: Arial, sans-serif"
+            >
+              Dyslexia is not a lack of intelligence; it's a creative difference
+              in processing. We help you unlock that creativity by removing the
+              barriers of traditional text.
+            </p>
+          </div>
+          <p class="text-center mt-4 text-sm text-slate-400 italic">
+            Adjust controls above to change the text.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Features Grid -->
-    <section id="features" class="py-24 bg-gradient-to-b from-cream-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Everything You Need to Thrive</h2>
-                <p class="text-lg text-slate-600">Powerful assistive technology in a simple, friendly package.</p>
-            </div>
-
-            <!-- Bento Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Feature 1: Scanning (Large, spans 2 cols) -->
-                <div class="md:col-span-2 card-modern feature-card hover-lift">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -mr-16 -mt-16 transition group-hover:bg-blue-100 opacity-50"></div>
-                    <div class="relative z-10 flex flex-col md:flex-row h-full items-start md:items-center gap-8">
-                        <div class="flex-1">
-                            <div class="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mb-6 text-brand-blue shadow-lg">
-                                <i class="ph-fill ph-scan text-3xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Point and Just Scan</h3>
-                            <p class="text-slate-600 leading-relaxed text-lg">Point your camera towards a piece of text to scan multiple pages at a time. Recognizes both typed and hand-written text instantly. No internet connection needed.</p>
-                        </div>
-                        <!-- Decorative Visual -->
-                        <div class="hidden md:flex flex-col gap-2 opacity-80 group-hover:opacity-100 transition-opacity transform group-hover:scale-105 duration-500">
-                             <div class="w-32 h-4 bg-gray-100 rounded-full animate-pulse"></div>
-                             <div class="w-40 h-4 bg-gray-100 rounded-full animate-pulse delay-75"></div>
-                             <div class="w-24 h-4 bg-gray-100 rounded-full animate-pulse delay-150"></div>
-                             <div class="w-32 h-32 mt-2 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border-2 border-blue-100 flex items-center justify-center shadow-lg">
-                                <i class="ph-duotone ph-camera text-5xl text-brand-blue"></i>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature 2: Read Aloud (Tall/Square, spans 1 col) -->
-                <div class="md:col-span-1 card-modern feature-card hover-lift flex flex-col">
-                     <div class="absolute bottom-0 right-0 w-40 h-40 bg-orange-50 rounded-full blur-2xl -mr-10 -mb-10 transition opacity-50"></div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center mb-6 text-brand-orange shadow-lg">
-                            <i class="ph-fill ph-speaker-high text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Read and Listen</h3>
-                        <p class="text-slate-600 leading-relaxed">Choose from 28 on-device realistic sounding voices (Premium). Words are highlighted as they are read to maintain attention, and the page automatically scrolls as you read.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 3: AI Tutor (Wide, spans 3 cols, Dark Theme) -->
-                <div class="md:col-span-3 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-[2rem] p-8 md:p-12 shadow-2xl hover:shadow-glow transition duration-300 relative overflow-hidden group">
-                    <!-- Decor -->
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-blue opacity-20 rounded-full blur-3xl translate-x-1/3 -translate-y-1/2 pointer-events-none"></div>
-                    
-                    <div class="relative z-10 grid md:grid-cols-2 gap-10 items-center">
-                        <div class="order-2 md:order-1">
-                             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 text-teal-400 font-semibold text-xs mb-6 border border-slate-700 shadow-lg">
-                                <i class="ph-fill ph-star"></i> New Feature
-                            </div>
-                            <h3 class="text-3xl font-bold text-white mb-4">Chat With Your Virtual Tutor</h3>
-                            <p class="text-slate-300 text-lg leading-relaxed mb-8">Stuck on a long text? Ask your AI tutor to summarize it instantly. Need a definition? Just long-press any word. Your tutor is available 24/7 to answer reading questions and help with comprehension.</p>
-                            <a href="#download" class="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-bold hover:bg-teal-50 transition transform hover:-translate-y-1 shadow-lg">
-                                Try AI Tutor <i class="ph-bold ph-arrow-right"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Chat UI Mockup -->
-                        <div class="order-1 md:order-2 bg-slate-800/50 rounded-2xl p-6 border border-slate-700 backdrop-blur-sm transform translate-y-2 md:translate-y-4 group-hover:translate-y-0 transition duration-500 hover:border-slate-600 shadow-xl">
-                             <div class="flex items-center gap-3 mb-6 border-b border-slate-700 pb-4">
-                                <div class="w-3 h-3 rounded-full bg-red-400 shadow-sm"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-400 shadow-sm"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-400 shadow-sm"></div>
-                                <div class="text-xs text-slate-400 ml-2">Tutor Chat</div>
-                             </div>
-                             <div class="space-y-4">
-                                <div class="flex gap-3 justify-end">
-                                    <div class="bg-gradient-to-br from-brand-blue to-blue-600 text-white px-4 py-3 rounded-2xl rounded-tr-sm text-sm shadow-lg">Summarize this chapter</div>
-                                    <div class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
-                                        <i class="ph-fill ph-user text-blue-200"></i>
-                                    </div>
-                                </div>
-                                <div class="flex gap-3">
-                                    <div class="w-8 h-8 bg-teal-500/20 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
-                                        <i class="ph-fill ph-robot text-teal-200"></i>
-                                    </div>
-                                    <div class="bg-slate-700 text-slate-100 px-4 py-3 rounded-2xl rounded-tl-sm text-sm shadow-lg border border-slate-600">
-                                        The main character discovers a hidden map in the library, which leads to a secret garden... 🌿
-                                    </div>
-                                </div>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <section
+      id="features"
+      class="py-24 bg-gradient-to-b from-cream-50 to-white"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Everything You Need to Thrive
+          </h2>
+          <p class="text-lg text-slate-600">
+            Powerful assistive technology in a simple, friendly package.
+          </p>
         </div>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Feature 1: Scanning (Large, spans 2 cols) -->
+          <div class="md:col-span-2 card-modern feature-card hover-lift">
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -mr-16 -mt-16 transition group-hover:bg-blue-100 opacity-50"
+            ></div>
+            <div
+              class="relative z-10 flex flex-col md:flex-row h-full items-start md:items-center gap-8"
+            >
+              <div class="flex-1">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mb-6 text-brand-blue shadow-lg"
+                >
+                  <i class="ph-fill ph-scan text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                  Point and Just Scan
+                </h3>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                  Point your camera towards a piece of text to scan multiple
+                  pages at a time. Recognizes both typed and hand-written text
+                  instantly. No internet connection needed.
+                </p>
+              </div>
+              <!-- Decorative Visual -->
+              <div
+                class="hidden md:flex flex-col gap-2 opacity-80 group-hover:opacity-100 transition-opacity transform group-hover:scale-105 duration-500"
+              >
+                <div
+                  class="w-32 h-4 bg-gray-100 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="w-40 h-4 bg-gray-100 rounded-full animate-pulse delay-75"
+                ></div>
+                <div
+                  class="w-24 h-4 bg-gray-100 rounded-full animate-pulse delay-150"
+                ></div>
+                <div
+                  class="w-32 h-32 mt-2 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border-2 border-blue-100 flex items-center justify-center shadow-lg"
+                >
+                  <i class="ph-duotone ph-camera text-5xl text-brand-blue"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2: Read Aloud (Tall/Square, spans 1 col) -->
+          <div
+            class="md:col-span-1 card-modern feature-card hover-lift flex flex-col"
+          >
+            <div
+              class="absolute bottom-0 right-0 w-40 h-40 bg-orange-50 rounded-full blur-2xl -mr-10 -mb-10 transition opacity-50"
+            ></div>
+            <div class="relative z-10">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center mb-6 text-brand-orange shadow-lg"
+              >
+                <i class="ph-fill ph-speaker-high text-3xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 mb-3">
+                Read and Listen
+              </h3>
+              <p class="text-slate-600 leading-relaxed">
+                Choose from 28 on-device realistic sounding voices (Premium).
+                Words are highlighted as they are read to maintain attention,
+                and the page automatically scrolls as you read.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 3: AI Tutor (Wide, spans 3 cols, Dark Theme) -->
+          <div
+            class="md:col-span-3 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-[2rem] p-8 md:p-12 shadow-2xl hover:shadow-glow transition duration-300 relative overflow-hidden group"
+          >
+            <!-- Decor -->
+            <div
+              class="absolute top-0 right-0 w-96 h-96 bg-brand-blue opacity-20 rounded-full blur-3xl translate-x-1/3 -translate-y-1/2 pointer-events-none"
+            ></div>
+
+            <div class="relative z-10 grid md:grid-cols-2 gap-10 items-center">
+              <div class="order-2 md:order-1">
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 text-teal-400 font-semibold text-xs mb-6 border border-slate-700 shadow-lg"
+                >
+                  <i class="ph-fill ph-star"></i> New Feature
+                </div>
+                <h3 class="text-3xl font-bold text-white mb-4">
+                  Chat With Your Virtual Tutor
+                </h3>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                  Stuck on a long text? Ask your AI tutor to summarize it
+                  instantly. Need a definition? Just long-press any word. Your
+                  tutor is available 24/7 to answer reading questions and help
+                  with comprehension.
+                </p>
+                <a
+                  href="#download"
+                  class="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-xl font-bold hover:bg-teal-50 transition transform hover:-translate-y-1 shadow-lg"
+                >
+                  Try AI Tutor <i class="ph-bold ph-arrow-right"></i>
+                </a>
+              </div>
+
+              <!-- Chat UI Mockup -->
+              <div
+                class="order-1 md:order-2 bg-slate-800/50 rounded-2xl p-6 border border-slate-700 backdrop-blur-sm transform translate-y-2 md:translate-y-4 group-hover:translate-y-0 transition duration-500 hover:border-slate-600 shadow-xl"
+              >
+                <div
+                  class="flex items-center gap-3 mb-6 border-b border-slate-700 pb-4"
+                >
+                  <div class="w-3 h-3 rounded-full bg-red-400 shadow-sm"></div>
+                  <div
+                    class="w-3 h-3 rounded-full bg-yellow-400 shadow-sm"
+                  ></div>
+                  <div
+                    class="w-3 h-3 rounded-full bg-green-400 shadow-sm"
+                  ></div>
+                  <div class="text-xs text-slate-400 ml-2">Tutor Chat</div>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex gap-3 justify-end">
+                    <div
+                      class="bg-gradient-to-br from-brand-blue to-blue-600 text-white px-4 py-3 rounded-2xl rounded-tr-sm text-sm shadow-lg"
+                    >
+                      Summarize this chapter
+                    </div>
+                    <div
+                      class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
+                    >
+                      <i class="ph-fill ph-user text-blue-200"></i>
+                    </div>
+                  </div>
+                  <div class="flex gap-3">
+                    <div
+                      class="w-8 h-8 bg-teal-500/20 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm"
+                    >
+                      <i class="ph-fill ph-robot text-teal-200"></i>
+                    </div>
+                    <div
+                      class="bg-slate-700 text-slate-100 px-4 py-3 rounded-2xl rounded-tl-sm text-sm shadow-lg border border-slate-600"
+                    >
+                      The main character discovers a hidden map in the library,
+                      which leads to a secret garden... 🌿
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Testimonials -->
     <section class="py-20 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16">Here's What Teachers Say</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Review 1 -->
-                <div class="card-modern hover-lift bg-gradient-to-br from-cream-50 to-white">
-                    <i class="ph-fill ph-quotes text-6xl text-brand-blue opacity-10 absolute top-4 right-4"></i>
-                    <p class="text-lg text-slate-700 italic mb-6 leading-relaxed relative z-10">"I especially like that I can scan several pages of a text with my phone and have the app read it back to me. It recognizes not only typed text, but also hand-written text which makes it even more versatile!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center text-gray-500 font-bold overflow-hidden shadow-sm">
-                            <i class="ph-fill ph-user text-2xl"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold text-slate-900">Lynn Leonard</p>
-                            <p class="text-sm text-slate-500">Director of Programs, Dyslexia Institute of Indiana</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16"
+        >
+          Here's What Teachers Say
+        </h2>
 
-                <!-- Review 2 -->
-                <div class="card-modern hover-lift bg-gradient-to-br from-cream-50 to-white">
-                    <i class="ph-fill ph-quotes text-6xl text-brand-blue opacity-10 absolute top-4 right-4"></i>
-                    <p class="text-lg text-slate-700 italic mb-6 leading-relaxed relative z-10">"My son used to dread homework. With DyslexiaBuddy, he scans his worksheets and listens to the questions. His confidence has skyrocketed."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center text-gray-500 font-bold shadow-sm">SJ</div>
-                        <div>
-                            <p class="font-bold text-slate-900">Sarah J.</p>
-                            <p class="text-sm text-slate-500">Parent of a 5th grader</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Review 1 -->
+          <div
+            class="card-modern hover-lift bg-gradient-to-br from-cream-50 to-white"
+          >
+            <i
+              class="ph-fill ph-quotes text-6xl text-brand-blue opacity-10 absolute top-4 right-4"
+            ></i>
+            <p
+              class="text-lg text-slate-700 italic mb-6 leading-relaxed relative z-10"
+            >
+              "I especially like that I can scan several pages of a text with my
+              phone and have the app read it back to me. It recognizes not only
+              typed text, but also hand-written text which makes it even more
+              versatile!"
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center text-gray-500 font-bold overflow-hidden shadow-sm"
+              >
+                <i class="ph-fill ph-user text-2xl"></i>
+              </div>
+              <div>
+                <p class="font-bold text-slate-900">Lynn Leonard</p>
+                <p class="text-sm text-slate-500">
+                  Director of Programs, Dyslexia Institute of Indiana
+                </p>
+              </div>
             </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div
+            class="card-modern hover-lift bg-gradient-to-br from-cream-50 to-white"
+          >
+            <i
+              class="ph-fill ph-quotes text-6xl text-brand-blue opacity-10 absolute top-4 right-4"
+            ></i>
+            <p
+              class="text-lg text-slate-700 italic mb-6 leading-relaxed relative z-10"
+            >
+              "My son used to dread homework. With DyslexiaBuddy, he scans his
+              worksheets and listens to the questions. His confidence has
+              skyrocketed."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center text-gray-500 font-bold shadow-sm"
+              >
+                SJ
+              </div>
+              <div>
+                <p class="font-bold text-slate-900">Sarah J.</p>
+                <p class="text-sm text-slate-500">Parent of a 5th grader</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Pricing -->
     <section id="pricing" class="py-20 bg-gradient-to-b from-cream-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16">Simple, Transparent Pricing</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Plan 1: Free -->
-                <div class="card-modern hover-lift flex flex-col">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Free</h3>
-                    <p class="text-4xl font-bold text-slate-900 mb-6">$0</p>
-                    <ul class="space-y-4 mb-8 flex-1 text-slate-600">
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-green-500"></i> Basic Scanning</li>
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-green-500"></i> Dyslexia-friendly fonts</li>
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-green-500"></i> Standard voice support</li>
-                    </ul>
-                    <a href="#download" class="block text-center py-3 px-6 border-2 border-brand-blue text-brand-blue font-bold rounded-xl hover:bg-blue-50 transition shadow-sm hover:shadow-md">Download</a>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-16"
+        >
+          Simple, Transparent Pricing
+        </h2>
 
-                <!-- Plan 2: Monthly -->
-                <div class="card-modern hover-lift flex flex-col relative">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Monthly</h3>
-                    <p class="text-4xl font-bold text-slate-900 mb-6">$3.99<span class="text-lg text-gray-400 font-normal">/mo</span></p>
-                    <ul class="space-y-4 mb-8 flex-1 text-slate-600">
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-brand-blue"></i> Unlimited Multi-page Scanning</li>
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-brand-blue"></i> 28 On-Device Realistic Voices</li>
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-brand-blue"></i> Summaries & Definitions</li>
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-brand-blue"></i> Full Offline Mode</li>
-                    </ul>
-                    <a href="#download" class="block text-center py-3 px-6 border-2 border-brand-blue text-brand-blue font-bold rounded-xl hover:bg-blue-50 transition shadow-sm hover:shadow-md">Start Free Trial</a>
-                </div>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Plan 1: Free -->
+          <div class="card-modern hover-lift flex flex-col">
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Free</h3>
+            <p class="text-4xl font-bold text-slate-900 mb-6">$0</p>
+            <ul class="space-y-4 mb-8 flex-1 text-slate-600">
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-green-500"></i> Basic Scanning
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-green-500"></i>
+                Dyslexia-friendly fonts
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-green-500"></i> Standard voice
+                support
+              </li>
+            </ul>
+            <a
+              href="#download"
+              class="block text-center py-3 px-6 border-2 border-brand-blue text-brand-blue font-bold rounded-xl hover:bg-blue-50 transition shadow-sm hover:shadow-md"
+              >Download</a
+            >
+          </div>
 
-                <!-- Plan 3: Annual -->
-                <div class="pricing-card-featured bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 rounded-3xl shadow-2xl flex flex-col">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-brand-orange to-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg whitespace-nowrap">Best Value</div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Annual</h3>
-                    <div class="mb-6">
-                        <p class="text-4xl font-bold text-white mb-1">$29.99<span class="text-lg text-gray-400 font-normal">/year</span></p>
-                        <p class="text-sm text-green-400 font-bold">Save 37% vs Monthly</p>
-                    </div>
-                    <ul class="space-y-4 mb-8 flex-1 text-gray-300">
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-brand-blue"></i> Unlimited Multi-page Scanning</li>
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-brand-blue"></i> 28 On-Device Realistic Voices</li>
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-brand-blue"></i> Summaries & Definitions</li>
-                        <li class="flex items-center gap-2"><i class="ph-fill ph-check text-brand-blue"></i> Full Offline Mode</li>
-                    </ul>
-                    <a href="#download" class="block text-center py-3 px-6 bg-gradient-to-r from-brand-blue to-blue-600 text-white font-bold rounded-xl hover:from-blue-600 hover:to-blue-700 transition shadow-lg shadow-blue-500/30 hover:shadow-glow">Start Free Trial</a>
-                </div>
+          <!-- Plan 2: Monthly -->
+          <div class="card-modern hover-lift flex flex-col relative">
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Monthly</h3>
+            <p class="text-4xl font-bold text-slate-900 mb-6">
+              $3.99<span class="text-lg text-gray-400 font-normal">/mo</span>
+            </p>
+            <ul class="space-y-4 mb-8 flex-1 text-slate-600">
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-brand-blue"></i> Unlimited
+                Multi-page Scanning
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-brand-blue"></i> 28 On-Device
+                Realistic Voices
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-brand-blue"></i> Summaries &
+                Definitions
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-brand-blue"></i> Full Offline
+                Mode
+              </li>
+            </ul>
+            <a
+              href="#download"
+              class="block text-center py-3 px-6 border-2 border-brand-blue text-brand-blue font-bold rounded-xl hover:bg-blue-50 transition shadow-sm hover:shadow-md"
+              >Subscribe</a
+            >
+          </div>
+
+          <!-- Plan 3: Annual -->
+          <div
+            class="pricing-card-featured bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 rounded-3xl shadow-2xl flex flex-col"
+          >
+            <div
+              class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-brand-orange to-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg whitespace-nowrap"
+            >
+              Best Value
             </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Annual</h3>
+            <div class="mb-6">
+              <p class="text-4xl font-bold text-white mb-1">
+                $29.99<span class="text-lg text-gray-400 font-normal"
+                  >/year</span
+                >
+              </p>
+              <p class="text-sm text-green-400 font-bold">
+                Save 37% vs Monthly
+              </p>
+            </div>
+            <ul class="space-y-4 mb-8 flex-1 text-gray-300">
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-brand-blue"></i> Unlimited
+                Multi-page Scanning
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-brand-blue"></i> 28 On-Device
+                Realistic Voices
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-brand-blue"></i> Summaries &
+                Definitions
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph-fill ph-check text-brand-blue"></i> Full Offline
+                Mode
+              </li>
+            </ul>
+            <a
+              href="#download"
+              class="block text-center py-3 px-6 bg-gradient-to-r from-brand-blue to-blue-600 text-white font-bold rounded-xl hover:from-blue-600 hover:to-blue-700 transition shadow-lg shadow-blue-500/30 hover:shadow-glow"
+              >Subscribe</a
+            >
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- FAQ -->
     <section class="py-20 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <details class="group card-modern hover-lift cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
-                        Does this work for adults?
-                        <span class="transition group-open:rotate-180"><i class="ph-bold ph-caret-down text-brand-blue"></i></span>
-                    </summary>
-                    <p class="text-slate-600 mt-4 leading-relaxed">Absolutely. Many adults use DyslexiaBuddy for work reports, documents, and reading for pleasure.</p>
-                </details>
-                <details class="group card-modern hover-lift cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
-                        Can I use this offline?
-                        <span class="transition group-open:rotate-180"><i class="ph-bold ph-caret-down text-brand-blue"></i></span>
-                    </summary>
-                    <p class="text-slate-600 mt-4 leading-relaxed">Yes! Multi-page scanning and reading features work completely offline, perfect for classrooms or travel.</p>
-                </details>
-                <details class="group card-modern hover-lift cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
-                        What devices do you support?
-                        <span class="transition group-open:rotate-180"><i class="ph-bold ph-caret-down text-brand-blue"></i></span>
-                    </summary>
-                    <p class="text-slate-600 mt-4 leading-relaxed">DyslexiaBuddy is available for iPhone and iPad. You can download it directly from the App Store.</p>
-                </details>
-            </div>
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details class="group card-modern hover-lift cursor-pointer">
+            <summary
+              class="flex justify-between items-center font-bold text-lg text-slate-800 list-none"
+            >
+              Does this work for adults?
+              <span class="transition group-open:rotate-180"
+                ><i class="ph-bold ph-caret-down text-brand-blue"></i
+              ></span>
+            </summary>
+            <p class="text-slate-600 mt-4 leading-relaxed">
+              Absolutely. Many adults use DyslexiaBuddy for work reports,
+              documents, and reading for pleasure.
+            </p>
+          </details>
+          <details class="group card-modern hover-lift cursor-pointer">
+            <summary
+              class="flex justify-between items-center font-bold text-lg text-slate-800 list-none"
+            >
+              Can I use this offline?
+              <span class="transition group-open:rotate-180"
+                ><i class="ph-bold ph-caret-down text-brand-blue"></i
+              ></span>
+            </summary>
+            <p class="text-slate-600 mt-4 leading-relaxed">
+              Yes! Multi-page scanning and reading features work completely
+              offline, perfect for classrooms or travel.
+            </p>
+          </details>
+          <details class="group card-modern hover-lift cursor-pointer">
+            <summary
+              class="flex justify-between items-center font-bold text-lg text-slate-800 list-none"
+            >
+              What devices do you support?
+              <span class="transition group-open:rotate-180"
+                ><i class="ph-bold ph-caret-down text-brand-blue"></i
+              ></span>
+            </summary>
+            <p class="text-slate-600 mt-4 leading-relaxed">
+              DyslexiaBuddy is available for iPhone and iPad. You can download
+              it directly from the App Store.
+            </p>
+          </details>
         </div>
+      </div>
     </section>
 
     <!-- Bottom CTA -->
-    <section id="download" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-blue/10 via-transparent to-brand-orange/10"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Start improving your reading skills now</h2>
-            <p class="text-xl text-slate-400 mb-8">Join over 5,000+ families and get your own dyslexia companion.</p>
-             <a href="#" class="inline-flex items-center gap-3 btn-primary text-white text-lg px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-glow transition transform hover:-translate-y-1">
-                <i class="ph-fill ph-apple-logo text-2xl"></i>
-                <span>Download for iPhone & iPad</span>
-            </a>
-        </div>
+    <section
+      id="download"
+      class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-brand-blue/10 via-transparent to-brand-orange/10"
+      ></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Start improving your reading skills now
+        </h2>
+        <p class="text-xl text-slate-400 mb-8">
+          Join over 5,000+ families and get your own dyslexia companion.
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center gap-3 btn-primary text-white text-lg px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-glow transition transform hover:-translate-y-1"
+        >
+          <i class="ph-fill ph-apple-logo text-2xl"></i>
+          <span>Download for iPhone & iPad</span>
+        </a>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-slate-950 text-slate-300 py-12 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="col-span-1 md:col-span-1">
-                    <div class="flex items-center gap-2 mb-4 text-white">
-                        <img src="assets/images/app-logo.svg" alt="DyslexiaBuddy" class="h-8 w-auto">
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white mb-4">Company</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-brand-blue transition-colors">Home</a></li>
-                        <li><a href="#" class="hover:text-brand-blue transition-colors">Help</a></li>
-                        <li><a href="privacy.html" class="hover:text-brand-blue transition-colors">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white mb-4">Resources</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="blog.html" class="hover:text-brand-blue transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-brand-blue transition-colors">Media Press Kit</a></li>
-                        <li><a href="#" class="hover:text-brand-blue transition-colors">Published Research</a></li>
-                    </ul>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div class="col-span-1 md:col-span-1">
+            <div class="flex items-center gap-2 mb-4 text-white">
+              <img
+                src="assets/images/app-logo.svg"
+                alt="DyslexiaBuddy"
+                class="h-8 w-auto"
+              />
             </div>
-            <div class="border-t border-slate-900 pt-8 text-sm text-center md:text-left flex flex-col md:flex-row justify-between items-center">
-                <p>&copy; 2024 Onlabs Infotech. All rights reserved.</p>
-                <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
-                    <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-instagram-logo text-xl"></i></a>
-                    <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-facebook-logo text-xl"></i></a>
-                </div>
-            </div>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-4">Company</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="#" class="hover:text-brand-blue transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-blue transition-colors"
+                  >Help</a
+                >
+              </li>
+              <li>
+                <a
+                  href="privacy.html"
+                  class="hover:text-brand-blue transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-4">Resources</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="blog.html"
+                  class="hover:text-brand-blue transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-blue transition-colors"
+                  >Media Press Kit</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-blue transition-colors"
+                  >Published Research</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+        <div
+          class="border-t border-slate-900 pt-8 text-sm text-center md:text-left flex flex-col md:flex-row justify-between items-center"
+        >
+          <p>&copy; 2024 Onlabs Infotech. All rights reserved.</p>
+          <div class="flex gap-4 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white transition-colors"
+              ><i class="ph-fill ph-twitter-logo text-xl"></i
+            ></a>
+            <a href="#" class="hover:text-white transition-colors"
+              ><i class="ph-fill ph-instagram-logo text-xl"></i
+            ></a>
+            <a href="#" class="hover:text-white transition-colors"
+              ><i class="ph-fill ph-facebook-logo text-xl"></i
+            ></a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- External JavaScript -->
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>
-
