@@ -3,13 +3,16 @@
 ## Project Overview
 This is a static website for DyslexiaBuddy, an AI reading coach application designed to help people with dyslexia improve their reading confidence and speed. The website features text scanning, book importing, read-aloud functionality, and virtual AI tutor chat.
 
-## Current Status - VERCEL DEPLOYMENT READY
-- Proper repository structure organized for Vercel hosting
+## Current Status - STATIC SITE (GitHub Pages)
+- Proper repository structure organized for static hosting (GitHub Pages)
 - Clean file organization with assets in dedicated folders
 - Production-ready index.html with improved design
-- Vercel configuration files added
 - All asset paths verified for deployment
 - Blog section added with SEO-optimized articles
+- Hero section includes YouTube video embed and press logos section
+- Interactive demo section with manual toggle (no auto-toggle functionality)
+- All merge conflicts resolved, clean Tailwind CSS structure
+- Pricing section: Monthly and Annual plans use "Subscribe" button text (not "Start Free Trial")
 
 ## Project Structure
 ```
@@ -37,12 +40,15 @@ This is a static website for DyslexiaBuddy, an AI reading coach application desi
 - Uses Phosphor Icons for iconography
 - Google Fonts: Atkinson Hyperlegible (dyslexia-friendly font)
 - Static website - no build process required
-- Optimized for Vercel deployment
+- Optimized for GitHub Pages deployment
 - All functionality works offline
+- YouTube video embedded in hero section
+- Press logos section with clickable links to articles
 
 ## Features
 - Responsive navigation with mobile menu
-- Interactive demo section with accessibility controls
+- Hero section with YouTube video embed and press logos
+- Interactive demo section with manual toggle controls (dyslexia-friendly mode)
 - Features grid showcasing app capabilities
 - Testimonials section
 - Pricing section
@@ -50,6 +56,12 @@ This is a static website for DyslexiaBuddy, an AI reading coach application desi
 - Footer with links
 - **Blog section with SEO-optimized articles**
 - **Privacy Policy page with COPPA compliance information**
+
+## Recent Fixes
+- Resolved merge conflicts in index.html (removed Framer-generated code, kept Tailwind CSS structure)
+- Fixed missing closing div tag in notification banner
+- YouTube video embed configured for GitHub Pages
+- Demo toggle functionality restored (manual only, auto-toggle disabled)
 
 ## Blog Section
 The blog section includes:
