@@ -1031,6 +1031,14 @@
     </footer>
 
     <!-- External JavaScript -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" onerror="console.error('Failed to load script.js');"></script>
+    <script>
+      // Verify critical functions are loaded
+      (function() {
+        if (typeof manualMagicToggle === 'undefined' || typeof toggleCustomize === 'undefined' || typeof demoSpeak === 'undefined') {
+          console.error('JavaScript functions not loaded. Please check that assets/js/script.js exists and is accessible.');
+        }
+      })();
+    </script>
   </body>
 </html>

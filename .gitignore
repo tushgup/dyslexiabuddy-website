@@ -44,7 +44,8 @@ index-improved.html
 *.mjs
 !assets/**/*.mjs
 
-# Old script files
-js
+# Old script files (but allow assets/js/)
+js/
 script
+!assets/js/
 
