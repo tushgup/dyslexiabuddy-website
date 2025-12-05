@@ -62,6 +62,7 @@ This is a static website for DyslexiaBuddy, an AI reading coach application desi
 - Fixed missing closing div tag in notification banner
 - YouTube video embed configured for GitHub Pages
 - Demo toggle functionality restored (manual only, auto-toggle disabled)
+- All download app buttons linked to App Store: https://apps.apple.com/us/app/dyslexiabuddy/id1565832172
 
 ## Blog Section
 The blog section includes:
