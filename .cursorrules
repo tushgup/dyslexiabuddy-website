@@ -63,6 +63,7 @@ This is a static website for DyslexiaBuddy, an AI reading coach application desi
 - YouTube video embed configured for GitHub Pages
 - Demo toggle functionality restored (manual only, auto-toggle disabled)
 - All download app buttons linked to App Store: https://apps.apple.com/us/app/dyslexiabuddy/id1565832172
+- Fixed .gitignore to allow assets/js/script.js to be tracked and deployed (was being ignored by "js" pattern)
 
 ## Blog Section
 The blog section includes:
