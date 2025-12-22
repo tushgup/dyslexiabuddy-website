@@ -20,6 +20,8 @@ This is a static website for DyslexiaBuddy, an AI reading coach application desi
 ├── index.html              # Main entry point (production-ready)
 ├── blog.html               # Blog listing page
 ├── privacy.html            # Privacy Policy page
+├── sitemap.html            # HTML sitemap page for users
+├── sitemap.xml             # XML sitemap for search engines
 ├── blog/
 │   ├── 10-reading-strategies-dyslexia.html    # Article: Reading strategies
 │   ├── parents-guide-dyslexia-support.html    # Article: Parent's guide
@@ -56,6 +58,7 @@ This is a static website for DyslexiaBuddy, an AI reading coach application desi
 - Footer with links
 - **Blog section with SEO-optimized articles**
 - **Privacy Policy page with COPPA compliance information**
+- **Sitemap (XML and HTML) for SEO and user navigation**
 
 ## Recent Fixes
 - Resolved merge conflicts in index.html (removed Framer-generated code, kept Tailwind CSS structure)
@@ -99,3 +102,15 @@ The privacy policy page (privacy.html) includes:
 - Mobile-responsive design
 - Consistent styling with main website
 - Footer links updated to include privacy policy link
+
+## Sitemap
+The website includes both XML and HTML sitemaps:
+- **sitemap.xml**: XML sitemap following the sitemap protocol for search engines (Google, Bing, etc.)
+  - Includes all main pages, blog articles, and homepage sections
+  - Proper priority and changefreq settings for SEO optimization
+  - Base URL: https://dyslexiabuddy.com
+- **sitemap.html**: User-friendly HTML sitemap page
+  - Organized sections: Main Pages, Blog Articles, Homepage Sections, External Resources
+  - Consistent styling with the rest of the website
+  - Mobile-responsive design
+  - Linked in footer Resources section

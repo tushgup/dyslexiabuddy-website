@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dyslexiabuddy.com/sitemap.xml
+
