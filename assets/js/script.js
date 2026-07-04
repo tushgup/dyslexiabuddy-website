@@ -18,7 +18,7 @@ function toggleDyslexiaMode() {
         document.body.classList.add('dyslexia-mode');
         if (toggleButton) {
             toggleButton.classList.remove('bg-gray-300');
-            toggleButton.classList.add('bg-brand-blue');
+            toggleButton.classList.add('bg-brand-500');
         }
         if (toggleCircle) {
             toggleCircle.classList.add('translate-x-6');
@@ -28,7 +28,7 @@ function toggleDyslexiaMode() {
         document.body.classList.remove('dyslexia-mode');
         if (toggleButton) {
             toggleButton.classList.add('bg-gray-300');
-            toggleButton.classList.remove('bg-brand-blue');
+            toggleButton.classList.remove('bg-brand-500');
         }
         if (toggleCircle) {
             toggleCircle.classList.remove('translate-x-6');
@@ -72,9 +72,9 @@ function toggleBtnState(id, isActive) {
         // Standard buttons
         if (isActive) {
             btn.classList.remove('bg-white', 'text-slate-700', 'border-gray-300', 'hover:bg-gray-50');
-            btn.classList.add('bg-slate-800', 'text-white', 'border-slate-800', 'hover:bg-slate-700');
+            btn.classList.add('bg-brand-600', 'text-white', 'border-brand-600', 'hover:bg-brand-700');
         } else {
-            btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-800', 'hover:bg-slate-700');
+            btn.classList.remove('bg-brand-600', 'text-white', 'border-brand-600', 'hover:bg-brand-700');
             btn.classList.add('bg-white', 'text-slate-700', 'border-gray-300', 'hover:bg-gray-50');
         }
     }
@@ -122,7 +122,7 @@ function setMagicMode(enable) {
     if (enable) {
         // Turn everything ON
         toggleBtn.classList.remove('bg-gray-200');
-        toggleBtn.classList.add('bg-brand-blue');
+        toggleBtn.classList.add('bg-brand-500');
         knob.classList.add('translate-x-10');
         icon.classList.remove('opacity-0');
         
@@ -135,7 +135,7 @@ function setMagicMode(enable) {
     } else {
         // Turn everything OFF
         toggleBtn.classList.add('bg-gray-200');
-        toggleBtn.classList.remove('bg-brand-blue');
+        toggleBtn.classList.remove('bg-brand-500');
         knob.classList.remove('translate-x-10');
         icon.classList.add('opacity-0');
 
@@ -161,13 +161,13 @@ function checkMagicState() {
     if (allActive) {
         isMagicMode = true;
         toggleBtn.classList.remove('bg-gray-200');
-        toggleBtn.classList.add('bg-brand-blue');
+        toggleBtn.classList.add('bg-brand-500');
         knob.classList.add('translate-x-10');
         icon.classList.remove('opacity-0');
     } else {
         isMagicMode = false;
         toggleBtn.classList.add('bg-gray-200');
-        toggleBtn.classList.remove('bg-brand-blue');
+        toggleBtn.classList.remove('bg-brand-500');
         knob.classList.remove('translate-x-10');
         icon.classList.add('opacity-0');
     }
@@ -197,12 +197,12 @@ function demoSpeak() {
         utterance.pitch = 1;
         
         if (demoTextContainer) {
-            demoTextContainer.style.border = "2px solid #4C51BF";
+            demoTextContainer.style.border = "2px solid #F2731A";
         }
         
         utterance.onend = function() {
             if (demoTextContainer) {
-                demoTextContainer.style.border = "1px solid #f3f4f6";
+                demoTextContainer.style.border = "1px solid #F3E4D2";
             }
         };
 
@@ -213,7 +213,7 @@ function demoSpeak() {
 }
 
 /**
- * Toggle between Comic Sans and Arial fonts
+ * Toggle between a dyslexia-friendly font and the default reading font
  */
 function demoToggleFont() {
     if (!demoText) return;
@@ -224,7 +224,7 @@ function demoToggleFont() {
     if (isComicFont) {
         demoText.style.fontFamily = "'Comic Sans MS', 'Chalkboard SE', sans-serif";
     } else {
-        demoText.style.fontFamily = "Arial, sans-serif";
+        demoText.style.fontFamily = "'Atkinson Hyperlegible', Verdana, sans-serif";
     }
     checkMagicState();
 }
