@@ -122,16 +122,15 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <!-- Copy -->
-          <div class="reveal active text-center lg:text-left">
-            <div class="mb-7 flex justify-center lg:justify-start">
-              <img src="assets/images/olive-branch-badge.svg" alt="Featured on the App Store" style="width:120px;height:auto;" />
+          <div class="hero-copy reveal active text-center lg:text-left">
+            <div class="mb-5 flex justify-center lg:justify-start">
+              <img src="assets/images/olive-branch-badge.svg" alt="Featured on the App Store" class="featured-badge" />
             </div>
-            <h1 class="headline text-[2.6rem] leading-[1.05] sm:text-5xl lg:text-[3.65rem] text-ink mb-6">
-              Your personal<br class="hidden sm:block" />
-              <span class="text-gradient">reading coach</span>,<br class="hidden sm:block" />
+            <h1 class="headline hero-title text-ink mb-5">
+              Your personal <span class="text-gradient">reading coach</span>,
               built for dyslexia.
             </h1>
-            <p class="text-lg sm:text-xl text-ink-700 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+            <p class="hero-subtitle text-ink-700 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
               DyslexiaBuddy turns any page into a calm, confident read. Scan text with your camera,
               listen with sentence and word tracking, tune fonts and colors, and ask a friendly on-device tutor for help.
             </p>
@@ -196,7 +195,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
           <div class="reveal">
-            <p class="text-sm font-bold text-brand-600 uppercase tracking-[0.15em] mb-3">Latest app experience</p>
+            <p class="latest-kicker mb-4">New in the app</p>
             <h2 class="headline text-3xl md:text-[2.65rem] text-ink mb-5">A reader that follows your eyes, not the other way around.</h2>
             <p class="text-lg text-ink-700 leading-relaxed mb-8">
               The newest DyslexiaBuddy reader keeps the current sentence softly anchored while the spoken word gets a clear marker. Tap any word to start reading from there, or select a passage and send it straight to the tutor.
@@ -227,13 +226,34 @@
             </div>
           </div>
 
-          <div class="latest-showcase reveal delay-100">
-            <figure class="latest-phone latest-phone-back">
-              <img src="assets/images/app/shot-06.jpg" alt="DyslexiaBuddy reading screen with highlighted text" />
-            </figure>
-            <figure class="latest-phone latest-phone-front">
-              <img src="assets/images/app/shot-01.jpg" alt="DyslexiaBuddy tutor screen" />
-            </figure>
+          <div class="latest-preview reveal delay-100" aria-label="Reader interaction preview">
+            <div class="latest-reader">
+              <div class="latest-reader__bar">
+                <span>Reader</span>
+                <span>Nova</span>
+              </div>
+              <p class="reading-type latest-reader__text">
+                The <span class="sentence-highlight">curious fox waited beside the garden wall while the morning light moved slowly across the page.</span>
+              </p>
+              <p class="reading-type latest-reader__text latest-reader__text--muted">
+                Tap any word to begin again, or select a sentence to ask the tutor for help.
+              </p>
+              <div class="latest-player">
+                <span class="latest-player__button"><i class="ph-fill ph-play"></i></span>
+                <div class="latest-player__track"><span></span></div>
+                <span class="latest-player__time">0:42</span>
+              </div>
+            </div>
+            <div class="latest-menu">
+              <span>Define</span>
+              <span>Simplify</span>
+              <span>Quiz</span>
+              <span>Explain</span>
+            </div>
+            <div class="latest-answer">
+              <i class="ph-fill ph-graduation-cap"></i>
+              <p><strong>"Curious"</strong> means wanting to learn or understand more about something.</p>
+            </div>
           </div>
         </div>
       </div>
