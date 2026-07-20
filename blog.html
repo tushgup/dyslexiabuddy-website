@@ -59,7 +59,7 @@
     </script>
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=20260720-blog">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -131,69 +131,73 @@
 </nav>
 
     <!-- Blog Header -->
-    <section class="pt-16 pb-12 bg-gradient-to-b from-cream-50 to-white relative overflow-hidden">
-        <!-- Background decoration -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/5 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-300/5 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-brand-50 to-brand-100 text-brand-600 font-semibold text-sm mb-6 border border-brand-200 shadow-sm">
-                <i class="ph-fill ph-newspaper"></i>
-                <span>DyslexiaBuddy Blog</span>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold text-ink mb-6">
-                Insights & Resources for <span class="text-brand-600">Better Reading</span>
+    <section class="blog-hero">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="blog-kicker"><i class="ph-fill ph-book-open-text" aria-hidden="true"></i><span>Reading resources</span></p>
+            <h1 class="headline blog-title text-ink">
+                Clear guidance for <span class="text-brand-600">better reading.</span>
             </h1>
-            <p class="text-lg md:text-xl text-ink-700 max-w-2xl mx-auto leading-relaxed">
+            <p class="blog-intro text-ink-700">
                 Expert tips, research-backed strategies, and helpful resources for families navigating dyslexia.
             </p>
         </div>
     </section>
 
     <!-- Blog Articles Grid -->
-    <section class="py-16 bg-white">
+    <section class="blog-library">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="blog-library-label">
+                <p>Start here</p>
+                <span>Current guide</span>
+            </div>
                 
                 <!-- Article New -->
-                <article class="blog-card group bg-white rounded-2xl shadow-soft border border-cream-200 overflow-hidden hover:shadow-xl hover:border-brand-200 transition-all duration-300">
-                    <div class="h-48 relative overflow-hidden">
-                        <img src="assets/images/blog/mobile-apps-article.jpg" alt="Comparison of dyslexia reading apps" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <article class="blog-featured group">
+                    <div class="blog-featured__media">
+                        <img src="assets/images/blog/dyslexiabuddy.jpeg" alt="DyslexiaBuddy reader, home, and text settings screens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 text-sm text-ink-500 mb-3">
+                    <div class="blog-featured__content">
+                        <p class="blog-topic">Product update</p>
+                        <div class="blog-meta">
                             <span class="flex items-center gap-1">
                                 <i class="ph ph-calendar"></i>
-                                Jan 6, 2026
+                                July 20, 2026
                             </span>
                             <span class="flex items-center gap-1">
                                 <i class="ph ph-clock"></i>
-                                8 min read
+                                9 min read
                             </span>
                         </div>
-                        <h2 class="text-xl font-bold text-ink mb-3 group-hover:text-brand-600 transition-colors">
-                            <a href="blog/best-reading-apps-dyslexia-comparison.html">
-                                Best Reading Apps for Dyslexia in 2026 (Expert-Reviewed Guide)
+                        <h2>
+                            <a href="blog/whats-new-phase-one-two.html">
+                                What's New in DyslexiaBuddy: A More Personal Reading Experience
                             </a>
                         </h2>
-                        <p class="text-ink-700 mb-4 leading-relaxed">
-                            We tested the top reading apps for dyslexia to help you find the perfect match. Compare features, pricing, and unique tools.
+                        <p>
+                            A guided tour of the updates that make it easier to follow, understand, and return to the text that matters to you.
                         </p>
-                        <a href="blog/best-reading-apps-dyslexia-comparison.html" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:gap-3 transition-all">
-                            Read More <i class="ph-bold ph-arrow-right"></i>
+                        <a href="blog/whats-new-phase-one-two.html" class="blog-read-link">
+                            Read the update <i class="ph-bold ph-arrow-right"></i>
                         </a>
                     </div>
                 </article>
-                
+
+                <div class="blog-library-heading">
+                    <div>
+                        <h2 class="headline text-ink">More from the library</h2>
+                        <p>Practical ideas for readers, families, and educators.</p>
+                    </div>
+                </div>
+
+            <div class="blog-listing">
                 <!-- Article 1 -->
-                <article class="blog-card group bg-white rounded-2xl shadow-soft border border-cream-200 overflow-hidden hover:shadow-xl hover:border-brand-200 transition-all duration-300">
-                    <div class="h-48 relative overflow-hidden">
+                <article class="blog-card blog-story group">
+                    <div class="blog-story__media">
                         <img src="assets/images/blog/Tips.png" alt="Reading strategies for children with dyslexia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 text-sm text-ink-500 mb-3">
+                    <div class="blog-story__content">
+                        <p class="blog-topic">At home</p>
+                        <div class="blog-meta">
                             <span class="flex items-center gap-1">
                                 <i class="ph ph-calendar"></i>
                                 Dec 1, 2024
@@ -203,27 +207,28 @@
                                 8 min read
                             </span>
                         </div>
-                        <h2 class="text-xl font-bold text-ink mb-3 group-hover:text-brand-600 transition-colors">
+                        <h2>
                             <a href="blog/10-reading-strategies-dyslexia.html">
                                 10 Effective Reading Strategies for Children with Dyslexia
                             </a>
                         </h2>
-                        <p class="text-ink-700 mb-4 leading-relaxed">
+                        <p>
                             Discover proven techniques to help your child build reading confidence, from multisensory approaches to assistive technology.
                         </p>
-                        <a href="blog/10-reading-strategies-dyslexia.html" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:gap-3 transition-all">
-                            Read More <i class="ph-bold ph-arrow-right"></i>
+                        <a href="blog/10-reading-strategies-dyslexia.html" class="blog-read-link">
+                            Read article <i class="ph-bold ph-arrow-right"></i>
                         </a>
                     </div>
                 </article>
 
                 <!-- Article 2 -->
-                <article class="blog-card group bg-white rounded-2xl shadow-soft border border-cream-200 overflow-hidden hover:shadow-xl hover:border-brand-200 transition-all duration-300">
-                    <div class="h-48 relative overflow-hidden">
+                <article class="blog-card blog-story group">
+                    <div class="blog-story__media">
                         <img src="assets/images/blog/Parents.png" alt="Parent's guide to supporting children with dyslexia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 text-sm text-ink-500 mb-3">
+                    <div class="blog-story__content">
+                        <p class="blog-topic">Parent support</p>
+                        <div class="blog-meta">
                             <span class="flex items-center gap-1">
                                 <i class="ph ph-calendar"></i>
                                 Nov 28, 2024
@@ -233,27 +238,28 @@
                                 10 min read
                             </span>
                         </div>
-                        <h2 class="text-xl font-bold text-ink mb-3 group-hover:text-brand-600 transition-colors">
+                        <h2>
                             <a href="blog/parents-guide-dyslexia-support.html">
                                 A Parent's Guide to Supporting Your Child with Dyslexia at Home
                             </a>
                         </h2>
-                        <p class="text-ink-700 mb-4 leading-relaxed">
+                        <p>
                             Practical tips and resources for parents to create a supportive learning environment and boost their child's confidence.
                         </p>
-                        <a href="blog/parents-guide-dyslexia-support.html" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:gap-3 transition-all">
-                            Read More <i class="ph-bold ph-arrow-right"></i>
+                        <a href="blog/parents-guide-dyslexia-support.html" class="blog-read-link">
+                            Read article <i class="ph-bold ph-arrow-right"></i>
                         </a>
                     </div>
                 </article>
 
                 <!-- Article 3 -->
-                <article class="blog-card group bg-white rounded-2xl shadow-soft border border-cream-200 overflow-hidden hover:shadow-xl hover:border-brand-200 transition-all duration-300">
-                    <div class="h-48 relative overflow-hidden">
+                <article class="blog-card blog-story group">
+                    <div class="blog-story__media">
                         <img src="assets/images/blog/Understanding Dyslexia.png" alt="Understanding dyslexia research and evidence-based approaches" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 text-sm text-ink-500 mb-3">
+                    <div class="blog-story__content">
+                        <p class="blog-topic">Research</p>
+                        <div class="blog-meta">
                             <span class="flex items-center gap-1">
                                 <i class="ph ph-calendar"></i>
                                 Nov 25, 2024
@@ -263,16 +269,46 @@
                                 12 min read
                             </span>
                         </div>
-                        <h2 class="text-xl font-bold text-ink mb-3 group-hover:text-brand-600 transition-colors">
+                        <h2>
                             <a href="blog/dyslexia-research-evidence-based.html">
                                 Understanding Dyslexia: Latest Research and Evidence-Based Approaches
                             </a>
                         </h2>
-                        <p class="text-ink-700 mb-4 leading-relaxed">
+                        <p>
                             Explore the latest scientific findings on dyslexia and learn about evidence-based interventions that actually work.
                         </p>
-                        <a href="blog/dyslexia-research-evidence-based.html" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:gap-3 transition-all">
-                            Read More <i class="ph-bold ph-arrow-right"></i>
+                        <a href="blog/dyslexia-research-evidence-based.html" class="blog-read-link">
+                            Read article <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card blog-story group">
+                    <div class="blog-story__media">
+                        <img src="assets/images/blog/mobile-apps-article.jpg" alt="Comparison of dyslexia reading apps" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="blog-story__content">
+                        <p class="blog-topic">App guides</p>
+                        <div class="blog-meta">
+                            <span class="flex items-center gap-1">
+                                <i class="ph ph-calendar"></i>
+                                Jan 6, 2026
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i class="ph ph-clock"></i>
+                                8 min read
+                            </span>
+                        </div>
+                        <h2>
+                            <a href="blog/best-reading-apps-dyslexia-comparison.html">
+                                Best Reading Apps for Dyslexia in 2026 (Expert-Reviewed Guide)
+                            </a>
+                        </h2>
+                        <p>
+                            We tested the top reading apps for dyslexia to help you find the right fit. Compare features, pricing, and support tools.
+                        </p>
+                        <a href="blog/best-reading-apps-dyslexia-comparison.html" class="blog-read-link">
+                            Read article <i class="ph-bold ph-arrow-right"></i>
                         </a>
                     </div>
                 </article>
@@ -284,11 +320,12 @@
 
 
     <!-- Bottom CTA -->
-    <section class="py-20 bg-brand-500 relative overflow-hidden">
+    <section class="blog-cta">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Reading?</h2>
-            <p class="text-xl text-brand-100 mb-8">Download DyslexiaBuddy and start your journey to confident reading today.</p>
-             <a href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 btn-primary text-white text-lg px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-warm transition transform hover:-translate-y-1">
+            <p class="blog-kicker blog-kicker--dark"><i class="ph-fill ph-headphones" aria-hidden="true"></i><span>Take it with you</span></p>
+            <h2 class="headline">Keep a reading coach close by.</h2>
+            <p>Download DyslexiaBuddy to scan, listen, and ask for help whenever a page gets difficult.</p>
+             <a href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer" class="blog-cta__button">
                 <i class="ph-fill ph-apple-logo text-2xl"></i>
                 <span>Download for iPhone & iPad</span>
             </a>
@@ -342,4 +379,3 @@
     </script>
 </body>
 </html>
-
