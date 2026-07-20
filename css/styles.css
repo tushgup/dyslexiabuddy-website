@@ -94,6 +94,12 @@ body {
   font-size: clamp(1.06rem, 3.8vw, 1.22rem);
   text-wrap: pretty;
 }
+.hero-product-image {
+  display: block;
+  width: min(100%, 610px);
+  height: auto;
+  filter: drop-shadow(0 30px 40px rgba(90, 50, 12, .18));
+}
 
 /* ---------- Eyebrow / chips ---------- */
 .eyebrow {
@@ -367,6 +373,9 @@ footer .btn-primary {
     width: min(100%, 520px);
     margin-inline: auto;
   }
+  .hero-product-image {
+    width: min(100%, 500px);
+  }
   .latest-preview {
     max-width: 640px;
     margin: 0 auto;
@@ -384,6 +393,9 @@ footer .btn-primary {
   .hero-subtitle {
     font-size: 1.05rem;
     line-height: 1.65;
+  }
+  .hero-product-image {
+    width: min(100%, 430px);
   }
   .latest-kicker {
     font-size: .9rem;
