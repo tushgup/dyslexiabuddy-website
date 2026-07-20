@@ -1,134 +1,44 @@
-# Vercel Deployment Guide
+# Cloudflare Pages Deployment Guide
 
-## Quick Start
+This repository is deployed as a static site through Cloudflare Pages. Branches receive Pages preview deployments, and the production branch serves `dyslexiabuddy.com`.
 
-### Option 1: Deploy via Vercel Dashboard (Recommended)
+## Cloudflare Pages settings
 
-1. **Push your code to GitHub:**
-   ```bash
-   git add .
-   git commit -m "Prepare for Vercel deployment"
-   git push origin main
-   ```
+- **Framework preset:** None
+- **Build command:** Leave empty
+- **Build output directory:** `/`
+- **Root directory:** Repository root
+- **Environment variables:** None required
 
-2. **Import to Vercel:**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "Add New Project"
-   - Import your GitHub repository
-   - Vercel will auto-detect the configuration
-   - Click "Deploy"
+The site contains multiple standalone HTML pages. Do not add a catch-all SPA rewrite to `index.html`; doing so would hide article, privacy, and sitemap pages.
 
-3. **Your site will be live!** 🎉
+## Response headers
 
-### Option 2: Deploy via Vercel CLI
+Cloudflare Pages reads the repository-root `_headers` file because the repository root is also the build output directory. It defines:
 
-1. **Install Vercel CLI:**
-   ```bash
-   npm i -g vercel
-   ```
+- Security headers for every static page.
+- Long-lived immutable caching for files under `assets/` and `css/`.
 
-2. **Login to Vercel:**
-   ```bash
-   vercel login
-   ```
+When adding a new top-level asset that needs custom caching, add an explicit rule to `_headers` or place the asset under `assets/`.
 
-3. **Deploy:**
-   ```bash
-   vercel
-   ```
+## Deploy
 
-4. **For production deployment:**
-   ```bash
-   vercel --prod
-   ```
+Push a branch to create a preview deployment:
 
-## Project Structure
-
-```
-dyslexiabuddy-website/
-├── index.html              # Main entry point (SPA)
-├── css/
-│   └── styles.css          # Custom styles
-├── assets/
-│   ├── js/
-│   │   └── script.js       # JavaScript
-│   └── images/             # Image assets
-├── vercel.json             # Vercel configuration
-├── .gitignore              # Git ignore rules
-└── README.md               # Documentation
+```bash
+git push origin your-branch
 ```
 
-## Configuration Details
+Merge to the production branch to publish the main site. Deployment status and logs are available in the Cloudflare Pages dashboard and on the associated GitHub commit or pull request.
 
-### vercel.json
+## Custom domain
 
-The `vercel.json` file includes:
-
-- **SPA Routing**: All routes redirect to `index.html` for client-side routing
-- **Security Headers**: XSS protection, frame options, content type options
-- **Cache Headers**: Long-term caching for static assets
-
-### Environment Variables
-
-No environment variables are required for this static site.
-
-## Custom Domain
-
-To add a custom domain:
-
-1. Go to your project in Vercel Dashboard
-2. Navigate to Settings → Domains
-3. Add your domain
-4. Follow DNS configuration instructions
-
-## Build Settings
-
-- **Framework Preset**: Other
-- **Build Command**: (leave empty - static site)
-- **Output Directory**: `.` (root)
-- **Install Command**: (leave empty)
+Manage `dyslexiabuddy.com` from the Cloudflare Pages project under **Custom domains**. The domain is configured in Cloudflare rather than through a repository `CNAME` file.
 
 ## Troubleshooting
 
-### Issue: 404 errors on refresh
-
-**Solution**: The `vercel.json` already includes SPA routing configuration. If you still see 404s, ensure the rewrites section is correct.
-
-### Issue: Assets not loading
-
-**Solution**: Check that all asset paths in `index.html` are relative (e.g., `css/styles.css`, `assets/js/script.js`)
-
-### Issue: Slow loading
-
-**Solution**: 
-- Assets are already configured with cache headers
-- Consider using Vercel's Edge Network for faster global delivery
-- Check image optimization (Vercel auto-optimizes images)
-
-## Performance Optimization
-
-- ✅ Static assets cached for 1 year
-- ✅ Security headers configured
-- ✅ SPA routing configured
-- ✅ CDN delivery via Vercel Edge Network
-
-## Monitoring
-
-- Check deployment status in Vercel Dashboard
-- View analytics in Vercel Dashboard → Analytics
-- Monitor errors in Vercel Dashboard → Logs
-
-## Rollback
-
-If you need to rollback:
-
-1. Go to Vercel Dashboard → Deployments
-2. Find the previous working deployment
-3. Click "..." → "Promote to Production"
-
-## Support
-
-For Vercel-specific issues, check:
-- [Vercel Documentation](https://vercel.com/docs)
-- [Vercel Community](https://github.com/vercel/vercel/discussions)
+- **A page returns 404:** Confirm the matching `.html` file exists and internal links use the same filename.
+- **Assets do not load:** Keep local asset paths relative and preserve filename casing.
+- **Headers are missing:** Confirm `_headers` is present in the deployed output and that the response is a static asset rather than a Pages Function response.
+- **A preview is stale:** Check the Pages deployment for the latest commit and review its build logs.
 

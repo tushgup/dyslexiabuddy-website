@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.66 40" width="135" height="45" role="img" aria-label="Download on the App Store">
+  <rect width="119.66" height="40" rx="8" fill="#000"/>
+  <rect x=".5" y=".5" width="118.66" height="39" rx="7.5" fill="none" stroke="rgba(255,255,255,.15)"/>
+  <path fill="#fff" d="M23.38 20.27c-.03-3.38 2.76-5.01 2.88-5.09-1.57-2.29-4.02-2.61-4.89-2.64-2.07-.21-4.06 1.23-5.11 1.23-1.06 0-2.67-1.2-4.4-1.16-2.25.03-4.34 1.32-5.5 3.32-2.36 4.08-.6 10.12 1.69 13.44 1.12 1.62 2.46 3.44 4.22 3.38 1.7-.07 2.34-1.09 4.39-1.09 2.04 0 2.61 1.09 4.41 1.05 1.83-.03 2.98-1.65 4.09-3.28 1.29-1.87 1.83-3.68 1.85-3.78-.04-.01-3.55-1.36-3.63-5.38zm-3.41-9.88c.93-1.12 1.56-2.69 1.39-4.24-1.34.05-2.97.89-3.94 2.02-.86.98-1.62 2.57-1.42 4.09 1.51.12 3.04-.77 3.97-1.87z"/>
+  <text x="33.5" y="16.8" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="7" letter-spacing=".12">Download on the</text>
+  <text x="32.8" y="31" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="16" font-weight="600" letter-spacing="-.45">App Store</text>
+</svg>

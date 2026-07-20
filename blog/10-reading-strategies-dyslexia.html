@@ -38,34 +38,26 @@
     <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Atkinson Hyperlegible', 'Verdana', 'sans-serif'],
-                    },
-                    colors: {
-                        cream: {
-                            50: '#FDFBF7',
-                            100: '#F7F3E8',
-                            200: '#EFE6D0',
-                        },
-                        slate: {
-                            800: '#2D3748',
-                            900: '#1A202C',
-                        },
-                        brand: {
-                            blue: '#4C51BF',
-                            teal: '#38B2AC',
-                            orange: '#ED8936'
-                        }
-                    },
-                    boxShadow: {
-                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-                        'glow': '0 0 30px rgba(76, 81, 191, 0.3)',
-                    }
-                }
-            }
-        }
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['-apple-system','BlinkMacSystemFont','"SF Pro Text"','"Segoe UI"','Roboto','Helvetica','Arial','sans-serif'],
+        display: ['-apple-system','BlinkMacSystemFont','"SF Pro Display"','"Segoe UI"','Roboto','Helvetica','Arial','sans-serif'],
+        reading: ['"Atkinson Hyperlegible"','Verdana','sans-serif'],
+      },
+      colors: {
+        cream: { 50: "#FFFBF6", 100: "#FFF4E9", 200: "#F3E4D2" },
+        brand: { 50:"#FFF3EA",100:"#FFE3CD",200:"#FFC79B",300:"#FFA868",400:"#FB8B3C",500:"#F2731A",600:"#E15B0C",700:"#B9470C" },
+        ink: { DEFAULT: "#2A1E14", 700: "#4F4034", 500: "#8A7563" },
+      },
+      boxShadow: {
+        soft: "0 2px 8px -2px rgba(90,50,12,.10)",
+        warm: "0 12px 30px -10px rgba(90,50,12,.18)",
+        lift: "0 30px 60px -22px rgba(90,50,12,.28)",
+      },
+    },
+  },
+};
     </script>
 
     <!-- Custom Styles -->
@@ -108,49 +100,46 @@
       gtag('config', 'G-ZY76RTTLKM');
     </script>
 </head>
-<body class="bg-cream-50 text-slate-800 font-sans antialiased">
+<body class="bg-cream-50 text-ink font-sans antialiased">
 
     <!-- Navigation -->
-    <nav class="sticky top-0 w-full z-50 bg-cream-50/95 backdrop-blur-lg border-b border-cream-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="../index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
-                    <img src="../assets/images/app-logo.svg" alt="DyslexiaBuddy" class="h-8 w-auto transition-transform group-hover:scale-110">
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../index.html#features" class="text-slate-800 hover:text-brand-blue font-medium transition-colors">Features</a>
-                    <a href="../index.html#demo" class="text-slate-800 hover:text-brand-blue font-medium transition-colors">Try Demo</a>
-                    <a href="../blog.html" class="text-brand-blue font-medium">Blog</a>
-                    <a href="../index.html#pricing" class="text-slate-800 hover:text-brand-blue font-medium transition-colors">Pricing</a>
-                    <a href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer" class="btn-primary text-white px-6 py-2.5 rounded-xl font-semibold shadow-lg hover:shadow-glow flex items-center gap-2">
-                        <i class="ph-fill ph-apple-logo"></i>
-                        Download
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button onclick="toggleMobileMenu()" class="text-slate-800 hover:text-brand-blue p-2 rounded-lg">
-                        <i class="ph ph-list text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-t border-cream-200 p-6">
-            <div class="flex flex-col space-y-4">
-                <a href="../index.html#features" class="text-lg font-medium text-slate-800 py-2">Features</a>
-                <a href="../index.html#demo" class="text-lg font-medium text-slate-800 py-2">Try Demo</a>
-                <a href="../blog.html" class="text-lg font-medium text-brand-blue py-2">Blog</a>
-                <a href="../index.html#pricing" class="text-lg font-medium text-slate-800 py-2">Pricing</a>
-                <a href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-white text-center py-3 rounded-xl font-semibold">Download for iOS</a>
-            </div>
-        </div>
-    </nav>
+    <nav class="sticky top-0 w-full z-50 bg-cream-50/80 backdrop-blur-xl border-b border-cream-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-18 py-3">
+      <a href="../index.html" class="flex items-center gap-2.5 group">
+        <img src="../assets/images/app/icon-256.png" alt="DyslexiaBuddy" class="h-9 w-9 rounded-[10px] shadow-soft ring-1 ring-black/5 transition-transform group-hover:scale-105" />
+        <span class="font-display font-bold text-lg tracking-tight text-ink">DyslexiaBuddy</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="../index.html#features" class="text-sm font-semibold text-ink-700 hover:text-brand-600 transition-colors">Features</a>
+        <a href="../index.html#gallery" class="text-sm font-semibold text-ink-700 hover:text-brand-600 transition-colors">The App</a>
+        <a href="../index.html#demo" class="text-sm font-semibold text-ink-700 hover:text-brand-600 transition-colors">Try It</a>
+        <a href="../index.html#pricing" class="text-sm font-semibold text-ink-700 hover:text-brand-600 transition-colors">Pricing</a>
+        <a href="../blog.html" class="text-sm font-semibold text-brand-600 transition-colors">Blog</a>
+        <a href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer"
+           class="btn-primary text-white text-sm px-5 py-2.5 font-semibold flex items-center gap-2">
+          <i class="ph-fill ph-apple-logo text-base"></i> Download
+        </a>
+      </div>
+      <button onclick="toggleMobileMenu()" class="md:hidden text-ink p-2 rounded-lg hover:bg-cream-100 transition-colors" aria-label="Menu">
+        <i class="ph ph-list text-2xl"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-t border-cream-200 p-6">
+    <div class="flex flex-col space-y-1">
+      <a href="../index.html#features" class="text-base font-semibold text-ink-700 hover:text-brand-600 py-2.5">Features</a>
+      <a href="../index.html#gallery" class="text-base font-semibold text-ink-700 hover:text-brand-600 py-2.5">The App</a>
+      <a href="../index.html#demo" class="text-base font-semibold text-ink-700 hover:text-brand-600 py-2.5">Try It</a>
+      <a href="../index.html#pricing" class="text-base font-semibold text-ink-700 hover:text-brand-600 py-2.5">Pricing</a>
+      <a href="../blog.html" class="text-base font-semibold text-brand-600 py-2.5">Blog</a>
+      <a href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer"
+         class="btn-primary text-white text-center py-3 mt-3 font-semibold flex items-center justify-center gap-2">
+        <i class="ph-fill ph-apple-logo"></i> Download for iOS
+      </a>
+    </div>
+  </div>
+</nav>
 
     <!-- Breadcrumb -->
     <div class="bg-white border-b border-cream-200">
@@ -160,7 +149,7 @@
                 <i class="ph ph-caret-right text-xs"></i>
                 <a href="../blog.html" class="hover:text-brand-blue transition-colors">Blog</a>
                 <i class="ph ph-caret-right text-xs"></i>
-                <span class="text-slate-800 font-medium">Reading Strategies</span>
+                <span class="text-ink font-medium">Reading Strategies</span>
             </nav>
         </div>
     </div>
@@ -175,7 +164,7 @@
                     <i class="ph-fill ph-lightbulb"></i>
                     <span>Reading Tips</span>
                 </div>
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-ink mb-6 leading-tight">
                     10 Effective Reading Strategies for Children with Dyslexia
                 </h1>
                 <div class="flex items-center justify-center gap-4 text-slate-500 text-sm">
@@ -209,7 +198,7 @@
                             <span class="text-white font-bold text-xl">1</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Use Multisensory Learning Techniques</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Use Multisensory Learning Techniques</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Multisensory learning engages visual, auditory, and kinesthetic pathways simultaneously. This approach is particularly effective for children with dyslexia because it creates multiple neural connections to the same information.
                             </p>
@@ -227,7 +216,7 @@
                             <span class="text-white font-bold text-xl">2</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Implement Text-to-Speech Technology</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Implement Text-to-Speech Technology</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Text-to-speech (TTS) technology allows children to hear text read aloud while following along visually. This dual-input method strengthens the connection between written and spoken language.
                             </p>
@@ -245,7 +234,7 @@
                             <span class="text-white font-bold text-xl">3</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Choose Dyslexia-Friendly Fonts</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Choose Dyslexia-Friendly Fonts</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Not all fonts are created equal for dyslexic readers. Fonts with clear letterforms, good spacing, and distinct character shapes can significantly reduce reading difficulty.
                             </p>
@@ -263,7 +252,7 @@
                             <span class="text-white font-bold text-xl">4</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Adjust Text Formatting</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Adjust Text Formatting</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Simple formatting changes can dramatically improve readability. Increased line spacing, wider margins, and larger text size reduce visual crowding that many dyslexic readers find overwhelming.
                             </p>
@@ -281,7 +270,7 @@
                             <span class="text-white font-bold text-xl">5</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Break Reading into Smaller Chunks</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Break Reading into Smaller Chunks</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Long passages can feel overwhelming. Breaking text into smaller, manageable sections helps maintain focus and prevents cognitive overload.
                             </p>
@@ -299,7 +288,7 @@
                             <span class="text-white font-bold text-xl">6</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Practice Phonemic Awareness</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Practice Phonemic Awareness</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Phonemic awareness—the ability to identify and manipulate individual sounds in words—is a foundational skill for reading. Many children with dyslexia benefit from explicit phonemic awareness instruction.
                             </p>
@@ -317,7 +306,7 @@
                             <span class="text-white font-bold text-xl">7</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Use Color Overlays and Backgrounds</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Use Color Overlays and Backgrounds</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Some children with dyslexia experience visual stress when reading black text on white backgrounds. Colored overlays or tinted backgrounds can reduce this strain and improve reading fluency.
                             </p>
@@ -335,7 +324,7 @@
                             <span class="text-white font-bold text-xl">8</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Build a Sight Word Vocabulary</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Build a Sight Word Vocabulary</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Sight words (common words recognized instantly without sounding out) reduce cognitive load during reading. Building a strong sight word vocabulary helps reading flow more smoothly.
                             </p>
@@ -353,7 +342,7 @@
                             <span class="text-white font-bold text-xl">9</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Encourage Audiobooks and Read-Alouds</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Encourage Audiobooks and Read-Alouds</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Audiobooks allow children to enjoy age-appropriate content regardless of their current reading level. This maintains their love of stories while building vocabulary and comprehension skills.
                             </p>
@@ -371,7 +360,7 @@
                             <span class="text-white font-bold text-xl">10</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-3 leading-[3rem]">Leverage AI-Powered Learning Tools</h2>
+                            <h2 class="text-2xl font-bold text-ink mb-3 leading-[3rem]">Leverage AI-Powered Learning Tools</h2>
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Modern AI-powered tools can provide instant definitions, summaries, and explanations that help children understand difficult text without frustration.
                             </p>
@@ -384,7 +373,7 @@
 
                 <!-- Conclusion -->
                 <div class="mt-12 mb-8">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Making Progress Together</h2>
+                    <h2 class="text-2xl font-bold text-ink mb-4">Making Progress Together</h2>
                     <p class="text-slate-600 leading-relaxed mb-4">
                         Every child with dyslexia is unique, and what works best will vary from person to person. The key is to remain patient, celebrate small victories, and remember that dyslexia doesn't define intelligence or potential.
                     </p>
@@ -412,14 +401,14 @@
 
             <!-- Related Articles -->
             <div class="mt-16 pt-12 border-t border-cream-200">
-                <h3 class="text-2xl font-bold text-slate-900 mb-8">Related Articles</h3>
+                <h3 class="text-2xl font-bold text-ink mb-8">Related Articles</h3>
                 <div class="grid md:grid-cols-2 gap-6">
                     <a href="parents-guide-dyslexia-support.html" class="group bg-cream-50 rounded-xl p-6 border border-cream-200 hover:border-brand-blue/30 hover:shadow-lg transition-all">
-                        <h4 class="font-bold text-slate-900 group-hover:text-brand-blue transition-colors mb-2">A Parent's Guide to Supporting Your Child with Dyslexia at Home</h4>
+                        <h4 class="font-bold text-ink group-hover:text-brand-blue transition-colors mb-2">A Parent's Guide to Supporting Your Child with Dyslexia at Home</h4>
                         <p class="text-slate-500 text-sm">Practical tips for creating a supportive learning environment.</p>
                     </a>
                     <a href="dyslexia-research-evidence-based.html" class="group bg-cream-50 rounded-xl p-6 border border-cream-200 hover:border-brand-blue/30 hover:shadow-lg transition-all">
-                        <h4 class="font-bold text-slate-900 group-hover:text-brand-blue transition-colors mb-2">Understanding Dyslexia: Latest Research and Evidence-Based Approaches</h4>
+                        <h4 class="font-bold text-ink group-hover:text-brand-blue transition-colors mb-2">Understanding Dyslexia: Latest Research and Evidence-Based Approaches</h4>
                         <p class="text-slate-500 text-sm">Explore the science behind effective dyslexia interventions.</p>
                     </a>
                 </div>
