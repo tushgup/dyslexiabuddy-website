@@ -1,0 +1,75 @@
+/* Hallmark · tokens: Calm Reading Desk · anchor hue: warm orange */
+:root {
+  --color-paper: oklch(98.5% 0.009 65);
+  --color-paper-2: oklch(96.8% 0.022 67);
+  --color-paper-3: oklch(93.2% 0.032 70);
+  --color-rule: oklch(88% 0.032 68);
+  --color-rule-2: oklch(74% 0.04 65);
+  --color-muted: oklch(46% 0.035 60);
+  --color-neutral: oklch(35% 0.03 58);
+  --color-ink-2: oklch(29% 0.03 57);
+  --color-ink: oklch(20% 0.028 54);
+  --color-accent-soft: oklch(92% 0.075 58);
+  --color-accent: oklch(50% 0.155 45);
+  --color-accent-strong: oklch(42% 0.14 43);
+  --color-accent-ink: oklch(98.5% 0.009 65);
+  --color-focus: oklch(48% 0.17 255);
+  --color-info-soft: oklch(93% 0.04 240);
+  --color-success: oklch(43% 0.11 145);
+  --color-error: oklch(48% 0.18 25);
+  --color-dark-surface: oklch(22% 0.032 55);
+  --color-dark-ink: oklch(96% 0.018 68);
+  --color-shadow: oklch(28% 0.055 52 / 0.16);
+  --color-shadow-strong: oklch(24% 0.06 50 / 0.24);
+
+  --font-display: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  --font-body: "Atkinson Hyperlegible", Verdana, sans-serif;
+  --font-reading: "Atkinson Hyperlegible", Verdana, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.953rem;
+  --text-2xl: 2.441rem;
+  --text-3xl: 3.052rem;
+  --text-display-s: clamp(2.35rem, 7vw, 4.4rem);
+  --text-display: clamp(2.65rem, 7.5vw, 5.25rem);
+
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --space-5xl: 12rem;
+  --page-gutter: clamp(1rem, 4vw, 4rem);
+  --content-max: 78rem;
+
+  --radius-input: 0.75rem;
+  --radius-card: 1.5rem;
+  --radius-media: 2rem;
+  --radius-pill: 999px;
+
+  --rule-hair: 1px;
+  --rule-fine: 2px;
+
+  --shadow-card: 0 1rem 2.5rem -1.5rem var(--color-shadow);
+  --shadow-media: 0 2rem 4rem -2rem var(--color-shadow-strong);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  --z-base: 1;
+  --z-raised: 10;
+  --z-sticky: 200;
+}
