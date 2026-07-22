@@ -51,6 +51,84 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ---------- Shared site navigation ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid var(--cream-200);
+  background: rgba(255, 251, 246, .92);
+  backdrop-filter: blur(16px);
+}
+.site-nav__inner {
+  display: flex;
+  width: min(100%, 78rem);
+  margin-inline: auto;
+  padding: .75rem clamp(1rem, 4vw, 4rem);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.site-nav__brand {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: .75rem;
+  color: var(--ink);
+  font-family: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-nav__brand img {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: .75rem;
+  box-shadow: var(--shadow-sm);
+}
+.site-nav__links {
+  display: none;
+  margin-inline: auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+.site-nav__links a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--ink-700);
+  font-size: .875rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-nav__links a[aria-current="page"] { color: var(--brand-700); }
+.site-nav__cta {
+  display: inline-flex;
+  min-height: 2.75rem;
+  padding: .75rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: .75rem;
+  background: var(--brand-700);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+@media (hover: hover) and (pointer: fine) {
+  .site-nav__brand:hover,
+  .site-nav__links a:hover { color: var(--brand-700); }
+  .site-nav__cta:hover { background: var(--brand-800); }
+}
+@media (min-width: 52rem) {
+  .site-nav__links { display: flex; }
+}
+
 ::selection { background: var(--brand-200); color: var(--ink); }
 
 *:focus-visible {

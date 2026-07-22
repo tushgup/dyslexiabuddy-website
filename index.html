@@ -49,6 +49,11 @@
           <img src="assets/images/app/icon-256.png" alt="" width="256" height="256" />
           <span>DyslexiaBuddy</span>
         </a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="#tour">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="blog.html">Blog</a>
+        </nav>
         <a
           class="button"
           href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172"
@@ -117,11 +122,7 @@
             <div class="bench-step__copy">
               <p class="bench-step__index">1.0</p>
               <h3>Make the page feel readable.</h3>
-              <p>Change the font, colors, text size, line height, and letter spacing while previewing every choice.</p>
-              <ul class="annotation-list">
-                <li>Switch between reading surfaces without leaving the page.</li>
-                <li>Choose from familiar and dyslexia-friendly fonts.</li>
-              </ul>
+              <p>Change the font, colors, text size, line height, and letter spacing while previewing every choice. Switch reading surfaces without leaving the page, and choose from familiar and dyslexia-friendly fonts.</p>
             </div>
             <figure class="demo-frame">
               <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/features/customize-poster.webp" aria-label="Screen recording of DyslexiaBuddy text and appearance settings">
@@ -134,11 +135,7 @@
             <div class="bench-step__copy">
               <p class="bench-step__index">2.0</p>
               <h3>Choose a voice, then follow along.</h3>
-              <p>Pick an accent and voice, set the pace, and follow the highlighted text while DyslexiaBuddy reads aloud.</p>
-              <ul class="annotation-list">
-                <li>Six accents are included in the free experience.</li>
-                <li>Premium adds 28 human-sounding voices.</li>
-              </ul>
+              <p>Pick an accent and voice, set the pace, and follow the highlighted text while DyslexiaBuddy reads aloud. Six accents are included in the free experience, while premium adds 28 human-sounding voices.</p>
             </div>
             <figure class="demo-frame">
               <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/features/listen-poster.webp" aria-label="Screen recording of DyslexiaBuddy voice settings and read-aloud controls">
@@ -147,15 +144,11 @@
             </figure>
           </li>
 
-          <li class="bench-step" id="download-trigger">
+          <li class="bench-step">
             <div class="bench-step__copy">
               <p class="bench-step__index">3.0</p>
               <h3>Ask for a clearer starting point.</h3>
-              <p>Turn a long document into a short summary, or ask the reading tutor a question without leaving the passage.</p>
-              <ul class="annotation-list">
-                <li>Summaries surface the main ideas in simpler points.</li>
-                <li>The tutor stays alongside the imported document.</li>
-              </ul>
+              <p>Turn a long document into a short summary, or ask the reading tutor a question without leaving the passage. Summaries surface the main ideas in simpler points, and the tutor stays alongside the imported document.</p>
             </div>
             <figure class="demo-frame">
               <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/features/tutor-poster.webp" aria-label="Screen recording of DyslexiaBuddy summarizing an imported document">
@@ -168,11 +161,7 @@
             <div class="bench-step__copy">
               <p class="bench-step__index">4.0</p>
               <h3>Practice the words that slowed you down.</h3>
-              <p>Return to unfamiliar words as simple review cards, check the definition, and mark what needs another pass.</p>
-              <ul class="annotation-list">
-                <li>Saved words become a focused practice set.</li>
-                <li>Readers decide what they know and what to revisit.</li>
-              </ul>
+              <p>Return to unfamiliar words as simple review cards, check the definition, and mark what needs another pass. Saved words become a focused practice set, and readers decide what they know and what to revisit.</p>
             </div>
             <figure class="demo-frame">
               <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/features/review-poster.webp" aria-label="Screen recording of DyslexiaBuddy word review cards">
@@ -280,48 +269,6 @@
       </div>
     </footer>
 
-    <aside class="cta-sticky" data-sticky-cta aria-hidden="true">
-      <p>Ready to try the reading tools?</p>
-      <a
-        class="button"
-        data-sticky-link
-        tabindex="-1"
-        href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Download free</a>
-    </aside>
-
-    <script>
-      (() => {
-        const trigger = document.querySelector('#download-trigger');
-        const footer = document.querySelector('#footer');
-        const bar = document.querySelector('[data-sticky-cta]');
-        const link = document.querySelector('[data-sticky-link]');
-        if (!trigger || !footer || !bar || !link || !('IntersectionObserver' in window)) return;
-
-        let tourReached = false;
-        let footerVisible = false;
-
-        const render = () => {
-          const visible = tourReached && !footerVisible;
-          bar.classList.toggle('is-visible', visible);
-          bar.setAttribute('aria-hidden', String(!visible));
-          link.tabIndex = visible ? 0 : -1;
-          document.body.classList.toggle('has-sticky-cta', visible);
-        };
-
-        new IntersectionObserver(([entry]) => {
-          tourReached = entry.isIntersecting || entry.boundingClientRect.top < 0;
-          render();
-        }, { threshold: 0.2 }).observe(trigger);
-
-        new IntersectionObserver(([entry]) => {
-          footerVisible = entry.isIntersecting;
-          render();
-        }, { threshold: 0.05 }).observe(footer);
-      })();
-    </script>
     <script>
       (() => {
         const videos = document.querySelectorAll('[data-feature-video]');
