@@ -33,9 +33,7 @@ Thumbs.db
 
 # Repository-local design tooling
 .agents/
-.claude/
 .hallmark/
-.impeccable/
 skills-lock.json
 
 # Standalone video project (maintained separately)
