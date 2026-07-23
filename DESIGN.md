@@ -38,7 +38,7 @@ colors:
   warm-hairline: "rgba(90,50,12,.06)"
 typography:
   display:
-    fontFamily: "-apple-system, BlinkMacSystemFont, SF Pro Display, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+    fontFamily: "Bricolage Grotesque, -apple-system, BlinkMacSystemFont, SF Pro Display, Segoe UI, sans-serif"
     fontWeight: 700
     lineHeight: 1.04
     letterSpacing: "-0.028em"
@@ -149,7 +149,7 @@ The palette is warm and reader-friendly: orange carries action and brand identit
 
 ## 3. Typography
 
-**Display Font:** Apple system display stack with SF Pro Display preference.
+**Display Font:** Bricolage Grotesque, with the Apple system display stack as fallback.
 **Body Font:** Apple system text stack with SF Pro Text preference.
 **Reading Font:** Atkinson Hyperlegible with Verdana fallback.
 **Dyslexia Demo Font:** Comic Sans MS with Chalkboard SE and Lexend fallback, used only as a browser-safe dyslexia-mode demonstration.
@@ -239,3 +239,85 @@ The **Latest App Experience** showcase pairs concise feature points with overlap
 - **Don't** repeat tiny uppercase tracked section labels as the default structure on every new section.
 - **Don't** add dense educational brochure copy without a clear reader benefit.
 - **Don't** use low-contrast gray text on cream backgrounds.
+
+## 7. Exports
+
+The canonical implementation lives in `tokens.css`. These translations keep the same roles available to other tooling.
+
+### CSS custom properties
+
+```css
+@import url("./tokens.css");
+```
+
+### Tailwind v4
+
+```css
+@theme {
+  --color-paper: oklch(98.5% 0.009 65);
+  --color-paper-2: oklch(96.8% 0.022 67);
+  --color-paper-3: oklch(93.2% 0.032 70);
+  --color-rule: oklch(88% 0.032 68);
+  --color-muted: oklch(46% 0.035 60);
+  --color-ink: oklch(20% 0.028 54);
+  --color-accent: oklch(50% 0.155 45);
+  --color-focus: oklch(48% 0.17 255);
+  --font-display: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-reading: "Atkinson Hyperlegible", Verdana, sans-serif;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  --radius-card: 1.5rem;
+  --radius-input: 0.75rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+```
+
+### DTCG tokens
+
+```json
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "color": {
+    "paper": { "$value": "oklch(98.5% 0.009 65)", "$type": "color" },
+    "paper-2": { "$value": "oklch(96.8% 0.022 67)", "$type": "color" },
+    "ink": { "$value": "oklch(20% 0.028 54)", "$type": "color" },
+    "accent": { "$value": "oklch(50% 0.155 45)", "$type": "color" },
+    "focus": { "$value": "oklch(48% 0.17 255)", "$type": "color" }
+  },
+  "font": {
+    "display": { "$value": "Bricolage Grotesque, Apple system display stack", "$type": "fontFamily" },
+    "body": { "$value": "Apple system text stack", "$type": "fontFamily" },
+    "reading": { "$value": "Atkinson Hyperlegible, Verdana, sans-serif", "$type": "fontFamily" }
+  },
+  "space": {
+    "xs": { "$value": "0.5rem", "$type": "dimension" },
+    "md": { "$value": "1rem", "$type": "dimension" },
+    "xl": { "$value": "2.5rem", "$type": "dimension" }
+  }
+}
+```
+
+### shadcn/ui variables
+
+```css
+:root {
+  --background: 98.5% 0.009 65;
+  --foreground: 20% 0.028 54;
+  --card: 96.8% 0.022 67;
+  --card-foreground: 20% 0.028 54;
+  --primary: 50% 0.155 45;
+  --primary-foreground: 98.5% 0.009 65;
+  --secondary: 93.2% 0.032 70;
+  --secondary-foreground: 29% 0.03 57;
+  --muted: 88% 0.032 68;
+  --muted-foreground: 46% 0.035 60;
+  --border: 88% 0.032 68;
+  --input: 88% 0.032 68;
+  --ring: 48% 0.17 255;
+  --radius: 1.5rem;
+}
+```

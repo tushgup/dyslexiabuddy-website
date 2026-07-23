@@ -25,7 +25,7 @@
     <!-- Google Fonts: Atkinson Hyperlegible -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;family=Bricolage+Grotesque:wght@700&amp;display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -59,7 +59,7 @@
     </script>
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=20260720-blog">
+    <link rel="stylesheet" href="css/styles.css?v=20260722-pr-review">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -91,44 +91,20 @@
 </head>
 <body class="bg-cream-50 text-ink font-sans antialiased">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 w-full z-50 bg-cream-50/80 backdrop-blur-xl border-b border-cream-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-18 py-3">
-      <a href="index.html" class="flex items-center gap-2.5 group">
-        <img src="assets/images/app/icon-256.png" alt="DyslexiaBuddy" class="h-9 w-9 rounded-[10px] shadow-soft ring-1 ring-black/5 transition-transform group-hover:scale-105" />
-        <span class="font-display font-bold text-lg tracking-tight text-ink">DyslexiaBuddy</span>
-      </a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="index.html#features" class="text-sm font-semibold text-ink-700 hover:text-brand-600 transition-colors">Features</a>
-        <a href="index.html#gallery" class="text-sm font-semibold text-ink-700 hover:text-brand-600 transition-colors">The App</a>
-        <a href="index.html#demo" class="text-sm font-semibold text-ink-700 hover:text-brand-600 transition-colors">Try It</a>
-        <a href="index.html#pricing" class="text-sm font-semibold text-ink-700 hover:text-brand-600 transition-colors">Pricing</a>
-        <a href="blog.html" class="text-sm font-semibold text-brand-600 transition-colors">Blog</a>
-        <a href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer"
-           class="btn-primary text-white text-sm px-5 py-2.5 font-semibold flex items-center gap-2">
-          <i class="ph-fill ph-apple-logo text-base"></i> Download
+    <header class="site-nav">
+      <div class="site-nav__inner">
+        <a class="site-nav__brand" href="index.html" aria-label="DyslexiaBuddy home">
+          <img src="assets/images/app/icon-256.png" alt="" width="256" height="256" />
+          <span>DyslexiaBuddy</span>
         </a>
+        <nav class="site-nav__links" aria-label="Primary navigation">
+          <a href="index.html#tour">How it works</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="blog.html" aria-current="page">Blog</a>
+        </nav>
+        <a class="site-nav__cta" href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer">Download free</a>
       </div>
-      <button onclick="toggleMobileMenu()" class="md:hidden text-ink p-2 rounded-lg hover:bg-cream-100 transition-colors" aria-label="Menu">
-        <i class="ph ph-list text-2xl"></i>
-      </button>
-    </div>
-  </div>
-  <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-t border-cream-200 p-6">
-    <div class="flex flex-col space-y-1">
-      <a href="index.html#features" class="text-base font-semibold text-ink-700 hover:text-brand-600 py-2.5">Features</a>
-      <a href="index.html#gallery" class="text-base font-semibold text-ink-700 hover:text-brand-600 py-2.5">The App</a>
-      <a href="index.html#demo" class="text-base font-semibold text-ink-700 hover:text-brand-600 py-2.5">Try It</a>
-      <a href="index.html#pricing" class="text-base font-semibold text-ink-700 hover:text-brand-600 py-2.5">Pricing</a>
-      <a href="blog.html" class="text-base font-semibold text-brand-600 py-2.5">Blog</a>
-      <a href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer"
-         class="btn-primary text-white text-center py-3 mt-3 font-semibold flex items-center justify-center gap-2">
-        <i class="ph-fill ph-apple-logo"></i> Download for iOS
-      </a>
-    </div>
-  </div>
-</nav>
+    </header>
 
     <!-- Blog Header -->
     <section class="blog-hero">
@@ -370,12 +346,5 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html>

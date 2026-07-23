@@ -31,6 +31,14 @@ Thumbs.db
 # Vercel
 .vercel
 
+# Repository-local design tooling
+.agents/
+.hallmark/
+skills-lock.json
+
+# Standalone video project (maintained separately)
+remotion/
+
 # Temporary files
 *.tmp
 *.temp
@@ -48,4 +56,3 @@ index-improved.html
 js/
 script
 !assets/js/
-
