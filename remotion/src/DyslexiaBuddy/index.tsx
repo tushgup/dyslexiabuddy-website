@@ -2,9 +2,7 @@ import {
   AbsoluteFill,
   Easing,
   interpolate,
-  spring,
   useCurrentFrame,
-  useVideoConfig,
 } from "remotion";
 import {introContent} from "./content";
 import {displayFont, readingFont, theme} from "./theme";
@@ -13,23 +11,17 @@ const fadeUp = (frame: number, start: number) => {
   const progress = interpolate(frame, [start, start + 18], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
-    easing: Easing.out(Easing.cubic),
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
 
   return {
     opacity: progress,
-    transform: `translateY(${interpolate(progress, [0, 1], [44, 0])}px)`,
+    translate: `0 ${interpolate(progress, [0, 1], [44, 0])}px`,
   };
 };
 
 export const DyslexiaBuddyIntro: React.FC = () => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const cardScale = spring({
-    frame: frame - 54,
-    fps,
-    config: {damping: 15, stiffness: 110, mass: 0.8},
-  });
   const wordProgress = interpolate(frame, [100, 185], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -68,7 +60,11 @@ export const DyslexiaBuddyIntro: React.FC = () => {
           borderRadius: 44,
           boxShadow: "0 34px 80px rgba(90, 50, 12, 0.16)",
           padding: "70px 64px",
-          transform: `scale(${cardScale})`,
+          scale: interpolate(frame, [54, 82], [0.92, 1], {
+            easing: Easing.bezier(0.16, 1, 0.3, 1),
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          }),
           transformOrigin: "center",
         }}
       >

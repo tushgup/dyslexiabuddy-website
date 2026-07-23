@@ -1,11 +1,13 @@
 import type {ReactNode} from "react";
+import {Video} from "@remotion/media";
 import {
   Easing,
   Img,
+  Interactive,
   interpolate,
-  OffthreadVideo,
   staticFile,
   useCurrentFrame,
+  useVideoConfig,
 } from "remotion";
 import {displayFont, theme} from "../DyslexiaBuddy/theme";
 
@@ -13,7 +15,7 @@ export const sceneVisibility = (frame: number, duration: number) =>
   interpolate(frame, [0, 12, duration - 12, duration], [0, 1, 1, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
-    easing: Easing.inOut(Easing.cubic),
+    easing: Easing.bezier(0.45, 0, 0.55, 1),
   });
 
 export const Scene: React.FC<{
@@ -95,7 +97,8 @@ export const ReleaseLabel: React.FC<{dark?: boolean}> = ({dark = false}) => (
 );
 
 export const SceneTitle: React.FC<{children: ReactNode; size?: number}> = ({children, size = 78}) => (
-  <h2
+  <Interactive.H2
+    name="Scene title"
     style={{
       fontSize: size,
       fontWeight: 780,
@@ -106,65 +109,43 @@ export const SceneTitle: React.FC<{children: ReactNode; size?: number}> = ({chil
     }}
   >
     {children}
-  </h2>
+  </Interactive.H2>
 );
 
-export const Phone: React.FC<{
-  children?: ReactNode;
-  video?: string;
-  trimBefore?: number;
+export const ProductVideo: React.FC<{
+  source: string;
+  trimBeforeInSeconds?: number;
   style?: React.CSSProperties;
-  showIsland?: boolean;
-}> = ({
-  children,
-  video,
-  trimBefore,
-  style,
-  showIsland = !video,
-}) => (
-  <div
-    style={{
-      width: 560,
-      aspectRatio: "540 / 1174",
-      margin: "0 auto",
-      border: `2px solid ${theme.border}`,
-      borderRadius: 44,
-      overflow: "hidden",
-      background: theme.white,
-      boxShadow: "0 42px 96px rgba(70,40,20,.18), 0 10px 28px rgba(70,40,20,.10)",
-      position: "relative",
-      ...style,
-    }}
-  >
-    {showIsland ? (
-      <div
-        style={{
-          position: "absolute",
-          zIndex: 3,
-          top: 13,
-          left: "50%",
-          width: 132,
-          height: 34,
-          transform: "translateX(-50%)",
-          borderRadius: 999,
-          background: theme.ink,
-        }}
-      />
-    ) : null}
-    {video ? (
-      <OffthreadVideo
-        src={staticFile(video)}
+}> = ({source, trimBeforeInSeconds = 0, style}) => {
+  const {fps} = useVideoConfig();
+
+  return (
+    <Interactive.Div
+      name="Product recording"
+      style={{
+        width: 560,
+        aspectRatio: "540 / 1174",
+        margin: "0 auto",
+        border: `2px solid ${theme.border}`,
+        borderRadius: 44,
+        overflow: "hidden",
+        background: theme.white,
+        boxShadow: "0 42px 96px rgba(70,40,20,.18), 0 10px 28px rgba(70,40,20,.10)",
+        position: "relative",
+        ...style,
+      }}
+    >
+      <Video
+        src={staticFile(source)}
         muted
-        trimBefore={trimBefore}
+        trimBefore={trimBeforeInSeconds * fps}
+        objectFit="contain"
         style={{
           display: "block",
           width: "100%",
           aspectRatio: "540 / 1174",
-          objectFit: "contain",
         }}
       />
-    ) : (
-      children
-    )}
-  </div>
-);
+    </Interactive.Div>
+  );
+};

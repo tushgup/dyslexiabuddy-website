@@ -21,7 +21,8 @@ Choose `PhaseOneTwoRelease` in the Remotion Studio sidebar. It is the 30-second 
 - `src/DyslexiaBuddy/index.tsx` contains the composition and motion.
 - `src/ReleaseVideo/content.ts` contains all Phase 1 + 2 release copy and the voiceover script.
 - `src/ReleaseVideo/scenes.tsx` contains the seven release-video scenes.
-- `src/ReleaseVideo/TikTokCaptions.tsx` contains the word-highlight caption treatment.
+- `public/release/captions.json` contains word-timed captions in Remotion's `Caption` format.
+- `src/ReleaseVideo/TikTokCaptions.tsx` groups those captions into highlighted TikTok-style pages.
 - `public/release/voiceover.wav` is a temporary system-voice narration track. Replace it with the final recorded read without changing the composition code.
 - `src/Root.tsx` registers compositions and defines their dimensions and timing.
 - Put media used by future compositions in `public/` and load it with Remotion's `staticFile()` helper.
