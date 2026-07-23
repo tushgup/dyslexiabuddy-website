@@ -124,14 +124,14 @@ export const Phone: React.FC<{
 }) => (
   <div
     style={{
-      width: 466,
-      height: 1014,
+      width: 560,
+      aspectRatio: "540 / 1174",
       margin: "0 auto",
-      border: `10px solid ${theme.ink}`,
-      borderRadius: 58,
+      border: `2px solid ${theme.border}`,
+      borderRadius: 44,
       overflow: "hidden",
       background: theme.white,
-      boxShadow: "0 42px 96px rgba(70,40,20,.22), 0 10px 28px rgba(70,40,20,.12)",
+      boxShadow: "0 42px 96px rgba(70,40,20,.18), 0 10px 28px rgba(70,40,20,.10)",
       position: "relative",
       ...style,
     }}
@@ -156,7 +156,12 @@ export const Phone: React.FC<{
         src={staticFile(video)}
         muted
         trimBefore={trimBefore}
-        style={{width: "100%", height: "100%", objectFit: "cover"}}
+        style={{
+          display: "block",
+          width: "100%",
+          aspectRatio: "540 / 1174",
+          objectFit: "contain",
+        }}
       />
     ) : (
       children
