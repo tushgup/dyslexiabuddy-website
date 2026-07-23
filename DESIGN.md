@@ -263,7 +263,8 @@ The canonical implementation lives in `tokens.css`. These translations keep the 
   --color-accent: oklch(50% 0.155 45);
   --color-focus: oklch(48% 0.17 255);
   --font-display: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-  --font-body: "Atkinson Hyperlegible", Verdana, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-reading: "Atkinson Hyperlegible", Verdana, sans-serif;
   --spacing-xs: 0.5rem;
   --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
@@ -288,8 +289,9 @@ The canonical implementation lives in `tokens.css`. These translations keep the 
     "focus": { "$value": "oklch(48% 0.17 255)", "$type": "color" }
   },
   "font": {
-    "display": { "$value": "Apple system display stack", "$type": "fontFamily" },
-    "body": { "$value": "Atkinson Hyperlegible, Verdana, sans-serif", "$type": "fontFamily" }
+    "display": { "$value": "Bricolage Grotesque, Apple system display stack", "$type": "fontFamily" },
+    "body": { "$value": "Apple system text stack", "$type": "fontFamily" },
+    "reading": { "$value": "Atkinson Hyperlegible, Verdana, sans-serif", "$type": "fontFamily" }
   },
   "space": {
     "xs": { "$value": "0.5rem", "$type": "dimension" },

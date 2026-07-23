@@ -1,6 +1,5 @@
 /* Hallmark · genre: playful · macrostructure: Workbench · tone: soft · anchor hue: warm orange · enrichment: supplied product imagery · nav: N9 · footer: Ft5 · contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive/mobile: pass (34, 49–57) */
 /* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V5 */
-@import url("../tokens.css");
 
 *,
 *::before,
@@ -128,17 +127,21 @@ h3 {
 
 .nav-edge__inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-md);
+  column-gap: var(--space-md);
+  row-gap: var(--space-xs);
   padding-block: var(--space-sm);
 }
 
 .primary-nav {
-  display: none;
+  order: 3;
+  display: flex;
+  width: 100%;
   align-items: center;
-  gap: var(--space-lg);
-  margin-inline: auto;
+  justify-content: center;
+  gap: clamp(var(--space-sm), 4vw, var(--space-lg));
 }
 
 .primary-nav a {
@@ -188,6 +191,11 @@ h3 {
   text-decoration: none;
   white-space: nowrap;
   transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+
+.nav-edge .button {
+  padding-inline: var(--space-md);
+  font-size: var(--text-sm);
 }
 
 .button--quiet {
@@ -711,7 +719,14 @@ h3 {
 
 @media (min-width: 52rem) {
   .primary-nav {
-    display: flex;
+    order: initial;
+    width: auto;
+    margin-inline: auto;
+  }
+
+  .nav-edge .button {
+    padding-inline: var(--space-lg);
+    font-size: var(--text-base);
   }
 }
 
