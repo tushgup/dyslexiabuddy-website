@@ -31,6 +31,29 @@ git push origin your-branch
 
 Merge to the production branch to publish the main site. Deployment status and logs are available in the Cloudflare Pages dashboard and on the associated GitHub commit or pull request.
 
+## Apple app association
+
+`.well-known/apple-app-site-association` tells iOS which apps may claim this
+domain: the DyslexiaBuddy App Clip (`appclips`), universal links for
+`/clip` (`applinks`), and password autofill (`webcredentials`). `_headers`
+serves it as `application/json`. Keep it at this exact path with no file
+extension, and never redirect it: Apple's CDN does not follow redirects.
+After a deploy, check:
+
+```bash
+curl -sI https://dyslexiabuddy.com/.well-known/apple-app-site-association
+```
+
+The response must be `200` with `content-type: application/json`.
+
+## Not-found page
+
+`404.html` at the repository root is what Pages serves, with a real 404
+status, for any missing path. Without it, Pages assumes a single-page app and
+answers every unknown URL with `index.html` and a `200`, which hides broken
+links and made the association file above look present when it was not.
+It uses absolute asset paths because it is served at any depth.
+
 ## Custom domain
 
 Manage `dyslexiabuddy.com` from the Cloudflare Pages project under **Custom domains**. The domain is configured in Cloudflare rather than through a repository `CNAME` file.

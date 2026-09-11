@@ -1,0 +1,19 @@
+{
+  "appclips": {
+    "apps": ["HZ9Z8AG42J.com.onlabs.augmenta11y.Clip"]
+  },
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["HZ9Z8AG42J.com.onlabs.augmenta11y"],
+        "components": [
+          { "/": "/clip", "comment": "App Clip experience URL. Opens the full app when it is installed." },
+          { "/": "/clip/*", "comment": "Any App Clip Code or QR variant under /clip." }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["HZ9Z8AG42J.com.onlabs.augmenta11y"]
+  }
+}
