@@ -9,3 +9,10 @@
 
 /css/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Apple fetches this file (no extension) from its CDN; it must be served as
+# JSON, never as a redirect or HTML. Used by universal links, password
+# autofill, and the App Clip.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
