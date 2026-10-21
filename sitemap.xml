@@ -11,7 +11,7 @@
   <!-- Blog Listing Page -->
   <url>
     <loc>https://dyslexiabuddy.com/blog.html</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -25,6 +25,13 @@
   </url>
   
   <!-- Blog Articles -->
+  <url>
+    <loc>https://dyslexiabuddy.com/blog/signs-of-dyslexia-by-age.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://dyslexiabuddy.com/blog/best-font-for-dyslexia.html</loc>
     <lastmod>2026-10-20</lastmod>
