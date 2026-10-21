@@ -10,7 +10,7 @@
   
   <!-- Blog Listing Page -->
   <url>
-    <loc>https://dyslexiabuddy.com/blog.html</loc>
+    <loc>https://dyslexiabuddy.com/blog</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -18,7 +18,7 @@
   
   <!-- Privacy Policy -->
   <url>
-    <loc>https://dyslexiabuddy.com/privacy.html</loc>
+    <loc>https://dyslexiabuddy.com/privacy</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -26,63 +26,63 @@
   
   <!-- Blog Articles -->
   <url>
-    <loc>https://dyslexiabuddy.com/blog/signs-of-dyslexia-by-age.html</loc>
+    <loc>https://dyslexiabuddy.com/blog/signs-of-dyslexia-by-age</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://dyslexiabuddy.com/blog/best-font-for-dyslexia.html</loc>
+    <loc>https://dyslexiabuddy.com/blog/best-font-for-dyslexia</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://dyslexiabuddy.com/blog/iphone-ipad-setup-child-dyslexia.html</loc>
+    <loc>https://dyslexiabuddy.com/blog/iphone-ipad-setup-child-dyslexia</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://dyslexiabuddy.com/blog/whats-new-ios-27.html</loc>
+    <loc>https://dyslexiabuddy.com/blog/whats-new-ios-27</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://dyslexiabuddy.com/blog/whats-new-phase-one-two.html</loc>
+    <loc>https://dyslexiabuddy.com/blog/whats-new-phase-one-two</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://dyslexiabuddy.com/blog/10-reading-strategies-dyslexia.html</loc>
+    <loc>https://dyslexiabuddy.com/blog/10-reading-strategies-dyslexia</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://dyslexiabuddy.com/blog/parents-guide-dyslexia-support.html</loc>
+    <loc>https://dyslexiabuddy.com/blog/parents-guide-dyslexia-support</loc>
     <lastmod>2024-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://dyslexiabuddy.com/blog/best-reading-apps-dyslexia-comparison.html</loc>
+    <loc>https://dyslexiabuddy.com/blog/best-reading-apps-dyslexia-comparison</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://dyslexiabuddy.com/blog/dyslexia-research-evidence-based.html</loc>
+    <loc>https://dyslexiabuddy.com/blog/dyslexia-research-evidence-based</loc>
     <lastmod>2024-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
