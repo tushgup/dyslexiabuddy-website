@@ -16,6 +16,14 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Contact and Support -->
+  <url>
+    <loc>https://dyslexiabuddy.com/contact</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Privacy Policy -->
   <url>
     <loc>https://dyslexiabuddy.com/privacy</loc>
