@@ -11,7 +11,7 @@
   <!-- Blog Listing Page -->
   <url>
     <loc>https://dyslexiabuddy.com/blog</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -33,6 +33,13 @@
   </url>
   
   <!-- Blog Articles -->
+  <url>
+    <loc>https://dyslexiabuddy.com/blog/text-to-speech-dyslexia</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://dyslexiabuddy.com/blog/highlighting-note-taking-dyslexia</loc>
     <lastmod>2026-10-24</lastmod>
