@@ -388,11 +388,13 @@
             </p>
             <p class="text-slate-700 leading-relaxed">
               Email:
-              <a
+              <!-- Cloudflare email obfuscation rewrites this link to a
+                   /cdn-cgi/ URL that crawlers report as broken. -->
+              <!--email_off--><a
                 href="mailto:onlabs@outlook.com"
                 class="text-brand-blue hover:underline"
                 >onlabs@outlook.com</a
-              >
+              ><!--/email_off-->
             </p>
           </div>
         </div>
