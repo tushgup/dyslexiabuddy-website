@@ -270,24 +270,48 @@ h3 {
   text-transform: uppercase;
 }
 
-.hero__badge {
+.laurel-badge {
+  display: inline-flex;
   justify-self: start;
-  padding: var(--space-2xs, 0.25rem) var(--space-md);
-  border: var(--rule-hair) solid var(--color-rule);
-  border-radius: 999px;
-  background: var(--color-paper-2);
-  color: var(--color-ink, inherit);
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-ink);
+}
+
+.laurel-badge__branch {
+  width: auto;
+  height: 3.25rem;
+  color: var(--color-accent-strong);
+}
+
+.laurel-badge__branch--end {
+  transform: scaleX(-1);
+}
+
+.laurel-badge__text {
+  display: grid;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.laurel-badge__text strong {
   font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.laurel-badge__text span {
+  color: var(--color-neutral);
   font-size: var(--text-sm);
-  font-weight: 700;
 }
 
 .hero h1 {
-  max-width: 13ch;
-  font-size: var(--text-display-s);
+  max-width: 17ch;
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.02;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
 .hero__lede {
@@ -345,22 +369,10 @@ h3 {
   padding-block: var(--space-lg);
 }
 
-.proof-rail__claims {
-  display: grid;
-  gap: var(--space-xs);
-}
-
-.proof-rail p {
-  max-width: 52ch;
+.proof-rail .proof-rail__note {
+  max-width: 34ch;
   color: var(--color-neutral);
-}
-
-.proof-rail .proof-rail__lead {
-  color: var(--color-ink, inherit);
-  font-family: var(--font-display);
-  font-size: var(--text-md);
-  font-weight: 700;
-  line-height: 1.25;
+  font-weight: 400;
 }
 
 .press-links {
@@ -788,7 +800,7 @@ h3 {
 
 @media (min-width: 40rem) {
   .proof-rail__inner {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
     align-items: center;
   }
 
@@ -840,7 +852,7 @@ h3 {
   }
 
   .hero {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: var(--space-2xl);
     padding-block-start: var(--space-2xl);
   }
