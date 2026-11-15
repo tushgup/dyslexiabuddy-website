@@ -270,40 +270,61 @@ h3 {
   text-transform: uppercase;
 }
 
-.laurel-badge {
+.awards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+}
+
+.award {
   display: inline-flex;
-  justify-self: start;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 0.125rem;
   color: var(--color-ink);
+  text-decoration: none;
 }
 
-.laurel-badge__branch {
+.award__laurel {
   width: auto;
-  height: 3.25rem;
-  color: var(--color-accent-strong);
+  height: 4.75rem;
+  flex: none;
+  color: oklch(74% 0.02 60);
 }
 
-.laurel-badge__branch--end {
+.award__laurel--end {
   transform: scaleX(-1);
 }
 
-.laurel-badge__text {
+.award__text {
   display: grid;
+  gap: 0.2rem;
   text-align: center;
+}
+
+.award__label {
+  color: var(--color-neutral);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.award__title {
+  font-family: ui-serif, "New York", Georgia, serif;
+  font-size: 1.1875rem;
   line-height: 1.15;
 }
 
-.laurel-badge__text strong {
-  font-family: var(--font-display);
-  font-size: var(--text-md);
-  font-weight: 800;
-  letter-spacing: -0.01em;
+.award__sub {
+  color: var(--color-neutral);
+  font-size: 0.75rem;
+  line-height: 1.2;
 }
 
-.laurel-badge__text span {
-  color: var(--color-neutral);
-  font-size: var(--text-sm);
+a.award:hover .award__title {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .hero h1 {
@@ -930,4 +951,24 @@ h3 {
     animation-iteration-count: infinite !important;
   }
 
+}
+
+@media (max-width: 30rem) {
+  .awards {
+    flex-wrap: nowrap;
+    gap: var(--space-xs);
+  }
+
+  .award__laurel {
+    height: 3.75rem;
+  }
+
+  .award__title {
+    font-size: 1rem;
+  }
+
+  .award__label,
+  .award__sub {
+    font-size: 0.625rem;
+  }
 }
