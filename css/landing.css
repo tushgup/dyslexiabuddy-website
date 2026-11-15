@@ -434,18 +434,81 @@ h3 {
   min-width: 0;
 }
 
-.demo-frame video {
-  width: auto;
-  height: auto;
-  max-width: min(100%, 21rem);
-  max-height: 42rem;
-  aspect-ratio: 540 / 1174;
-  border: var(--rule-hair) solid var(--color-rule-2);
-  border-radius: var(--radius-media);
-  background: var(--color-paper-3);
-  box-shadow: var(--shadow-media);
-  object-fit: contain;
+.device {
+  position: relative;
+  width: min(100%, 20rem);
+  aspect-ratio: 1350 / 2760;
+  filter: drop-shadow(0 var(--space-lg) var(--space-xl) var(--color-shadow-strong));
 }
+
+.device video {
+  position: absolute;
+  left: 5.33%;
+  top: 2.5%;
+  width: 89.34%;
+  height: 95%;
+  border-radius: 15.4% / 7.1%;
+  background: var(--color-paper-3);
+  object-fit: cover;
+}
+
+.device__bezel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.device-still {
+  width: min(100%, 20rem);
+  height: auto;
+  filter: drop-shadow(0 var(--space-lg) var(--space-xl) var(--color-shadow-strong));
+}
+
+.devices {
+  padding-block: var(--space-3xl) var(--space-4xl);
+}
+
+.device-grid {
+  display: grid;
+  gap: var(--space-2xl);
+  align-items: end;
+}
+
+.device-grid figure {
+  display: grid;
+  gap: var(--space-md);
+  justify-items: center;
+  min-width: 0;
+}
+
+.device-grid img {
+  width: auto;
+  max-width: 100%;
+  max-height: 30rem;
+  height: auto;
+  filter: drop-shadow(0 var(--space-lg) var(--space-xl) var(--color-shadow-strong));
+}
+
+.device-grid figcaption {
+  max-width: 34ch;
+  color: var(--color-neutral);
+  text-align: center;
+}
+
+.device-grid figcaption strong {
+  display: block;
+  color: var(--color-ink, inherit);
+  font-family: var(--font-display);
+}
+
+@media (min-width: 52rem) {
+  .device-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+}
+
 
 .capabilities {
   background: var(--color-dark-surface);
