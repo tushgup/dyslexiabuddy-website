@@ -972,3 +972,19 @@ a.award:hover .award__title {
     font-size: 0.625rem;
   }
 }
+
+.award:only-child .award__laurel {
+  height: 3.5rem;
+}
+
+.award:only-child .award__title {
+  font-size: 1.3125rem;
+}
+
+.proof-rail .proof-rail__note {
+  color: var(--color-neutral);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
