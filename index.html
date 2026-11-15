@@ -28,7 +28,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="hero-image.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="assets/images/app/home-hero.webp" as="image" type="image/webp" fetchpriority="high" />
     <link
       href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Bricolage+Grotesque:wght@700&amp;display=swap"
       rel="stylesheet"
@@ -90,10 +90,10 @@
 
         <figure class="hero__media">
           <img
-            src="hero-image.webp"
-            alt="DyslexiaBuddy on iPhone and iPad, showing reading history, highlighted text, and tutor controls"
-            width="1183"
-            height="1330"
+            src="assets/images/app/home-hero.webp"
+            alt="DyslexiaBuddy on two iPhones. One reads a story aloud with the current word lit up. The other shows the Word Card for the word permission."
+            width="887"
+            height="1250"
             fetchpriority="high"
           />
         </figure>
@@ -126,29 +126,27 @@
           <li class="bench-step">
             <div class="bench-step__copy">
               <p class="bench-step__index">1.0</p>
-              <h3>Change the font, spacing, and colors until the page is easy on your eyes.</h3>
-              <p>Atkinson Hyperlegible and OpenDyslexic are built in. A reading ruler keeps your place on one line.</p>
-            </div>
-            <figure class="demo-frame">
-              <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/features/customize-poster.webp" aria-label="Screen recording of DyslexiaBuddy text and appearance settings">
-                <source src="assets/videos/features/customize.mp4" type="video/mp4" />
-              </video>
-            </figure>
-          </li>
-
-          <li class="bench-step">
-            <div class="bench-step__copy">
-              <p class="bench-step__index">2.0</p>
               <h3>Tap a sentence and listen from there.</h3>
               <p>Pick a voice and a speed that suit you. The voices on your device are free, and premium adds 28 AI voices that sound closer to a person.</p>
             </div>
             <figure class="demo-frame">
-              <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/features/listen-poster.webp" aria-label="Screen recording of DyslexiaBuddy voice settings and read-aloud controls">
-                <source src="assets/videos/features/listen.mp4" type="video/mp4" />
+              <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/tour/listen-poster.webp" aria-label="Screen recording: DyslexiaBuddy reads a story aloud and lights up each word, then shows the voice list">
+                <source src="assets/videos/tour/listen.mp4" type="video/mp4" />
               </video>
             </figure>
           </li>
-
+          <li class="bench-step">
+            <div class="bench-step__copy">
+              <p class="bench-step__index">2.0</p>
+              <h3>Press a hard word to hear it slowly.</h3>
+              <p>The Word Card splits the word into parts and gives a short meaning. Words you look up come back later as flashcards.</p>
+            </div>
+            <figure class="demo-frame">
+              <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/tour/wordcard-poster.webp" aria-label="Screen recording: the Word Card opens for the word permission and shows its parts and meaning">
+                <source src="assets/videos/tour/wordcard.mp4" type="video/mp4" />
+              </video>
+            </figure>
+          </li>
           <li class="bench-step">
             <div class="bench-step__copy">
               <p class="bench-step__index">3.0</p>
@@ -156,21 +154,20 @@
               <p>Olly is the tutor inside the app. It answers from the page you have open, and it can sum up a long document or quiz you on it.</p>
             </div>
             <figure class="demo-frame">
-              <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/features/tutor-poster.webp" aria-label="Screen recording of DyslexiaBuddy summarizing an imported document">
-                <source src="assets/videos/features/tutor.mp4" type="video/mp4" />
+              <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/tour/tutor-poster.webp" aria-label="Screen recording: Olly the tutor writes a short summary of the story">
+                <source src="assets/videos/tour/tutor.mp4" type="video/mp4" />
               </video>
             </figure>
           </li>
-
           <li class="bench-step">
             <div class="bench-step__copy">
               <p class="bench-step__index">4.0</p>
-              <h3>Press a hard word to hear it slowly.</h3>
-              <p>The Word Card splits the word into parts and gives a short meaning. Words you look up come back later as flashcards.</p>
+              <h3>Change the font, spacing, and colors until the page is easy on your eyes.</h3>
+              <p>Atkinson Hyperlegible and OpenDyslexic are built in. A reading ruler keeps your place on one line.</p>
             </div>
             <figure class="demo-frame">
-              <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/features/review-poster.webp" aria-label="Screen recording of DyslexiaBuddy word review cards">
-                <source src="assets/videos/features/review.mp4" type="video/mp4" />
+              <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/tour/customize-poster.webp" aria-label="Screen recording: the font changes to OpenDyslexic, the theme changes to yellow, and a reading ruler follows the line">
+                <source src="assets/videos/tour/customize.mp4" type="video/mp4" />
               </video>
             </figure>
           </li>
