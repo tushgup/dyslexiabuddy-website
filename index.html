@@ -30,11 +30,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="assets/images/app/home-hero.webp" as="image" type="image/webp" fetchpriority="high" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Bricolage+Grotesque:wght@700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Bricolage+Grotesque:wght@500;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="tokens.css?v=20260722-nav-review" />
     <link rel="stylesheet" href="css/landing.css?v=20260722-pr-review" />
+    <link rel="stylesheet" href="css/home.css?v=20261115" />
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY76RTTLKM"></script>
     <script>
@@ -55,7 +56,8 @@
           <span>DyslexiaBuddy</span>
         </a>
         <nav class="primary-nav" aria-label="Primary navigation">
-          <a href="#tour">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#devices">Devices</a>
           <a href="#pricing">Pricing</a>
           <a href="/blog">Blog</a>
         </nav>
@@ -69,265 +71,298 @@
     </header>
 
     <main id="main">
-      <section class="shell hero" id="top" aria-labelledby="hero-title">
-        <div class="hero__copy">
-          
-          <h1 id="hero-title">Hear any page read aloud while each word lights up.</h1>
-          <p class="hero__lede">
-            Scan a worksheet or import a PDF, and DyslexiaBuddy reads it to you in a font and color you choose.
-          </p>
-          <div class="awards"><div class="award"><svg class="award__laurel" viewBox="-1 4 26 74" aria-hidden="true" focusable="false" fill="currentColor"><path d="M24.73 68.53 L23.25 68.01 L21.80 67.41 L20.38 66.73 L19.00 65.98 L17.66 65.16 L16.37 64.27 L15.12 63.31 L13.93 62.29 L12.79 61.21 L11.71 60.07 L10.69 58.88 L9.73 57.63 L8.84 56.34 L8.02 55.00 L7.27 53.62 L6.59 52.20 L5.99 50.75 L5.47 49.27 L5.02 47.76 L4.66 46.24 L4.37 44.69 L4.16 43.14 L4.04 41.57 L4.00 40.00 L4.04 38.43 L4.16 36.86 L4.37 35.31 L4.66 33.76 L5.02 32.24 L5.47 30.73 L5.99 29.25 L6.59 27.80 L7.27 26.38 L8.02 25.00 L8.84 23.66 L9.73 22.37 L10.69 21.12 L11.71 19.93 L12.79 18.79 L13.93 17.71 L15.12 16.69 L16.37 15.73 L17.66 14.84 L19.00 14.02 L20.38 13.27" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 66.96) rotate(344.0) scale(1.00)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 66.96) rotate(424.0) scale(1.00 -1.00)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(13.93 62.29) rotate(360.0) scale(0.98)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(13.93 62.29) rotate(440.0) scale(0.98 -0.98)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(8.56 55.90) rotate(376.0) scale(0.95)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(8.56 55.90) rotate(456.0) scale(0.95 -0.95)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(5.16 48.27) rotate(392.0) scale(0.93)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(5.16 48.27) rotate(472.0) scale(0.93 -0.93)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(4.00 40.00) rotate(408.0) scale(0.91)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(4.00 40.00) rotate(488.0) scale(0.91 -0.91)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(5.16 31.73) rotate(424.0) scale(0.89)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(5.16 31.73) rotate(504.0) scale(0.89 -0.89)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(8.56 24.10) rotate(440.0) scale(0.86)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(8.56 24.10) rotate(520.0) scale(0.86 -0.86)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(13.93 17.71) rotate(456.0) scale(0.84)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(13.93 17.71) rotate(536.0) scale(0.84 -0.84)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 13.04) rotate(472.0) scale(0.82)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 13.04) rotate(552.0) scale(0.82 -0.82)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 13.04) rotate(514.0) scale(.85)"/></svg><span class="award__text"><span class="award__title">Featured by Apple</span></span><svg class="award__laurel award__laurel--end" viewBox="-1 4 26 74" aria-hidden="true" focusable="false" fill="currentColor"><path d="M24.73 68.53 L23.25 68.01 L21.80 67.41 L20.38 66.73 L19.00 65.98 L17.66 65.16 L16.37 64.27 L15.12 63.31 L13.93 62.29 L12.79 61.21 L11.71 60.07 L10.69 58.88 L9.73 57.63 L8.84 56.34 L8.02 55.00 L7.27 53.62 L6.59 52.20 L5.99 50.75 L5.47 49.27 L5.02 47.76 L4.66 46.24 L4.37 44.69 L4.16 43.14 L4.04 41.57 L4.00 40.00 L4.04 38.43 L4.16 36.86 L4.37 35.31 L4.66 33.76 L5.02 32.24 L5.47 30.73 L5.99 29.25 L6.59 27.80 L7.27 26.38 L8.02 25.00 L8.84 23.66 L9.73 22.37 L10.69 21.12 L11.71 19.93 L12.79 18.79 L13.93 17.71 L15.12 16.69 L16.37 15.73 L17.66 14.84 L19.00 14.02 L20.38 13.27" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 66.96) rotate(344.0) scale(1.00)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 66.96) rotate(424.0) scale(1.00 -1.00)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(13.93 62.29) rotate(360.0) scale(0.98)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(13.93 62.29) rotate(440.0) scale(0.98 -0.98)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(8.56 55.90) rotate(376.0) scale(0.95)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(8.56 55.90) rotate(456.0) scale(0.95 -0.95)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(5.16 48.27) rotate(392.0) scale(0.93)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(5.16 48.27) rotate(472.0) scale(0.93 -0.93)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(4.00 40.00) rotate(408.0) scale(0.91)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(4.00 40.00) rotate(488.0) scale(0.91 -0.91)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(5.16 31.73) rotate(424.0) scale(0.89)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(5.16 31.73) rotate(504.0) scale(0.89 -0.89)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(8.56 24.10) rotate(440.0) scale(0.86)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(8.56 24.10) rotate(520.0) scale(0.86 -0.86)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(13.93 17.71) rotate(456.0) scale(0.84)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(13.93 17.71) rotate(536.0) scale(0.84 -0.84)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 13.04) rotate(472.0) scale(0.82)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 13.04) rotate(552.0) scale(0.82 -0.82)"/><path d="M0 0C2-3.4 7.2-4 10.5-1.4C7.8 1.9 2.8 2.6 0 0Z" transform="translate(20.85 13.04) rotate(514.0) scale(.85)"/></svg></div></div>
-          <div class="hero__actions">
-            <a
-              class="button"
-              href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Download free</a>
-            <a class="button button--quiet" href="#tour">See how it works</a>
+      <section class="h-hero" id="top" aria-labelledby="hero-title">
+        <div class="h-shell h-hero__grid">
+          <div class="h-hero__copy">
+            <p class="h-laurel">
+              <img src="assets/images/laurel-l.svg" alt="" width="26" height="74" />
+              <span><span class="h-laurel__small">Featured by</span><span class="h-laurel__big">Apple</span></span>
+              <img src="assets/images/laurel-r.svg" alt="" width="26" height="74" />
+            </p>
+            <h1 id="hero-title">Hear any page read aloud while each word lights up.</h1>
+            <p class="h-lede">Scan a worksheet or import a PDF, and DyslexiaBuddy reads it to you in a font and color you choose.</p>
+            <a class="h-badge" href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer">
+              <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" width="160" height="54" />
+            </a>
+            <p class="h-note">Try every feature free for 7 days. On iPhone, iPad, and Mac.</p>
           </div>
-          <p class="hero__note">Free on iPhone, iPad, and Mac</p>
-        </div>
-
-        <figure class="hero__media">
-          <img
-            src="assets/images/app/home-hero.webp"
-            alt="DyslexiaBuddy on a MacBook reading a story aloud with the current word lit up, and on an iPhone showing the Word Card for the word permission."
-            width="1800"
-            height="1122"
-            fetchpriority="high"
-          />
-        </figure>
-      </section>
-
-      <section class="proof-rail" aria-label="Recognition and press">
-        <div class="shell proof-rail__inner">
-          <p class="proof-rail__note">In the press</p>
-          <div class="press-links">
-            <a href="https://x.com/HISTORYTV18/status/1220201994024935424" target="_blank" rel="noopener noreferrer" aria-label="Watch the History TV18 film">
-              <img src="assets/images/press/historytv18.webp" alt="History TV18" width="232" height="300" />
-            </a>
-            <a href="https://yourstory.com/socialstory/2019/05/dyslexia-children-elearning-app-augmenta11y" target="_blank" rel="noopener noreferrer" aria-label="Read the YourStory article">
-              <img src="assets/images/press/yourstory.png" alt="YourStory" width="200" height="200" />
-            </a>
-            <a href="https://www.news18.com/news/tech/apps-from-young-indian-developers-aim-to-fix-colour-blindness-dyslexia-speech-issues-3816467.html" target="_blank" rel="noopener noreferrer" aria-label="Read the News18 article">
-              <img src="assets/images/press/news18.svg" alt="News18" width="300" height="110" />
-            </a>
-          </div>
+          <figure class="h-hero__media">
+            <img src="assets/images/app/home-hero.webp" alt="DyslexiaBuddy on a MacBook reading a story aloud with the current word lit up, and on an iPhone showing the Word Card for the word permission." width="1800" height="1122" fetchpriority="high" />
+          </figure>
         </div>
       </section>
 
-      <section class="shell tour" id="tour" aria-labelledby="tour-title">
-        <header class="head-hang">
-          <h2 id="tour-title">Watch the app read a real page.</h2>
-          <p>These are screen recordings from the app.</p>
+      <section class="h-press" aria-label="In the press">
+        <div class="h-shell h-press__inner">
+          <p class="h-eyebrow">As seen on</p>
+          <a href="https://x.com/HISTORYTV18/status/1220201994024935424" target="_blank" rel="noopener noreferrer"><img src="assets/images/press/history-h.webp" alt="History TV18" width="192" height="158" class="h-press__h" /></a>
+          <a href="https://yourstory.com/socialstory/2019/05/dyslexia-children-elearning-app-augmenta11y" target="_blank" rel="noopener noreferrer"><img src="assets/images/press/yourstory.png" alt="YourStory" width="200" height="200" /></a>
+          <a href="https://www.news18.com/news/tech/apps-from-young-indian-developers-aim-to-fix-colour-blindness-dyslexia-speech-issues-3816467.html" target="_blank" rel="noopener noreferrer"><img src="assets/images/press/news18.svg" alt="News18" width="300" height="110" /></a>
+        </div>
+      </section>
+
+      <section class="h-voices" id="voices" aria-labelledby="voices-title">
+        <div class="h-shell h-voices__inner">
+          <p class="h-eyebrow h-eyebrow--warm">No more robot voices</p>
+          <h2 id="voices-title">Voices that sound like a person. No internet needed.</h2>
+          <p class="h-voices__lede">28 natural voices, made right on your iPhone, iPad, or Mac. Tap one to hear it.</p>
+          <ul class="h-orbs" aria-label="Voice samples">
+            <li><button type="button" data-voice="af_heart" data-desc="warm and expressive" style="--c1:#FF5C7A;--c2:#FF9A62;--c3:#C8304F;--c4:#FFE1CF"><span class="h-orb" aria-hidden="true"></span>Heart</button></li>
+            <li><button type="button" data-voice="af_bella" data-desc="bright and energetic" style="--c1:#FFB020;--c2:#FF6B4A;--c3:#E0452B;--c4:#FFF1B8"><span class="h-orb" aria-hidden="true"></span>Bella</button></li>
+            <li><button type="button" data-voice="am_michael" data-desc="a steady narrator" style="--c1:#3E7CB1;--c2:#D9A441;--c3:#23476B;--c4:#F6E7B9"><span class="h-orb" aria-hidden="true"></span>Michael</button></li>
+            <li><button type="button" data-voice="bf_emma" data-desc="gentle British warmth" style="--c1:#E8A0A0;--c2:#F3C9A6;--c3:#B0646E;--c4:#FFF2EA"><span class="h-orb" aria-hidden="true"></span>Emma</button></li>
+            <li><button type="button" data-voice="bm_fable" data-desc="a classic British storyteller" style="--c1:#3C7A5A;--c2:#D9A441;--c3:#23503A;--c4:#F6E7B9"><span class="h-orb" aria-hidden="true"></span>Fable</button></li>
+            <li><button type="button" data-voice="af_nova" data-desc="crisp and modern" style="--c1:#00C2D1;--c2:#7B61FF;--c3:#1B3FA6;--c4:#DFFBFF"><span class="h-orb" aria-hidden="true"></span>Nova</button></li>
+            <li><button type="button" data-voice="am_puck" data-desc="playful and spirited" style="--c1:#9BE15D;--c2:#FF6FB5;--c3:#00A6A6;--c4:#FFF59E"><span class="h-orb" aria-hidden="true"></span>Puck</button></li>
+            <li><button type="button" data-voice="bf_lily" data-desc="sweet and clear, British" style="--c1:#F59AC0;--c2:#B5E3A1;--c3:#D0628F;--c4:#FFF0F6"><span class="h-orb" aria-hidden="true"></span>Lily</button></li>
+          </ul>
+          <p class="h-voices__status" aria-live="polite" data-voice-status></p>
+          <p class="h-voices__foot">Works offline. 20 more voices in the app. Free to try for 7 days.</p>
+        </div>
+      </section>
+
+      <section class="h-section h-shell" id="features" aria-labelledby="features-title">
+        <header class="h-head">
+          <h2 id="features-title">Made for readers who find reading hard.</h2>
+          <p>Every tool is there to make the next page a little easier.</p>
         </header>
-
-        <ol class="workbench">
-          <li class="bench-step">
-            <div class="bench-step__copy">
-              <p class="bench-step__index">1.0</p>
-              <h3>Start with one of 14 free books.</h3>
-              <p>The Library has classics such as The Tale of Peter Rabbit and Treasure Island, sorted by age. You can open one before you scan anything.</p>
+        <div class="h-bento">
+          <article class="h-card h-card--wide h-card--tint">
+            <div class="h-card__text">
+              <h3>Follow along word by word</h3>
+              <p>Each word lights up as it is read, so your eyes always know where to be. Pick a voice and a speed that suit you.</p>
             </div>
-            <figure class="demo-frame">
-              <img class="device-still" src="assets/images/devices/ph-library.webp" alt="The Library screen with free classic books sorted by age" width="675" height="1380" loading="lazy" />
-            </figure>
-          </li>
-          <li class="bench-step">
-            <div class="bench-step__copy">
-              <p class="bench-step__index">2.0</p>
-              <h3>Tap a sentence and listen from there.</h3>
-              <p>Pick a voice and a speed that suit you. The voices on your device are free, and premium adds 28 AI voices that sound closer to a person.</p>
+            <div class="h-stage h-stage--listen">
+              <img class="h-shot h-shot--a" src="assets/images/stage/listen-text.webp" alt="Story text with the current word lit up" width="539" height="268" loading="lazy" />
+              <img class="h-shot h-shot--b" src="assets/images/stage/listen-player.webp" alt="Player with play, skip, and speed controls" width="509" height="156" loading="lazy" />
             </div>
-            <figure class="demo-frame">
-              <div class="device">
-                <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/tour/listen-poster.webp" aria-label="Screen recording: DyslexiaBuddy reads a story aloud and lights up each word, then shows the voice list">
-                <source src="assets/videos/tour/listen.mp4" type="video/mp4" />
-              </video>
-                <img class="device__bezel" src="assets/images/devices/bezel-iphone.webp" alt="" width="675" height="1380" loading="lazy" />
-              </div>
-            </figure>
-          </li>
-          <li class="bench-step">
-            <div class="bench-step__copy">
-              <p class="bench-step__index">3.0</p>
-              <h3>Press a hard word to hear it slowly.</h3>
-              <p>The Word Card splits the word into parts and gives a short meaning. Words you look up come back later as flashcards.</p>
+          </article>
+          <article class="h-card">
+            <div class="h-card__text">
+              <h3>Tap a hard word</h3>
+              <p>Word Card splits it into syllables and gives a simple meaning.</p>
             </div>
-            <figure class="demo-frame">
-              <div class="device">
-                <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/tour/wordcard-poster.webp" aria-label="Screen recording: the Word Card opens for the word permission and shows its parts and meaning">
-                <source src="assets/videos/tour/wordcard.mp4" type="video/mp4" />
-              </video>
-                <img class="device__bezel" src="assets/images/devices/bezel-iphone.webp" alt="" width="675" height="1380" loading="lazy" />
-              </div>
-            </figure>
-          </li>
-          <li class="bench-step">
-            <div class="bench-step__copy">
-              <p class="bench-step__index">4.0</p>
-              <h3>Ask Olly to explain a passage.</h3>
-              <p>Olly is the tutor inside the app. It answers from the page you have open, and it can sum up a long document or quiz you on it.</p>
+            <div class="h-stage"><img class="h-shot" src="assets/images/stage/wordcard-sheet.webp" alt="Word Card for permission, split into per, mis, sion, with a simple meaning" width="521" height="588" loading="lazy" style="--w:270px" /></div>
+          </article>
+          <article class="h-card">
+            <div class="h-card__text">
+              <h3>Ask Olly about the page</h3>
+              <p>Olly, the reading tutor, answers questions about what you are reading.</p>
             </div>
-            <figure class="demo-frame">
-              <div class="device">
-                <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/tour/tutor-poster.webp" aria-label="Screen recording: Olly the tutor writes a short summary of the story">
-                <source src="assets/videos/tour/tutor.mp4" type="video/mp4" />
-              </video>
-                <img class="device__bezel" src="assets/images/devices/bezel-iphone.webp" alt="" width="675" height="1380" loading="lazy" />
-              </div>
-            </figure>
-          </li>
-          <li class="bench-step">
-            <div class="bench-step__copy">
-              <p class="bench-step__index">5.0</p>
-              <h3>Change the font, spacing, and colors until the page is easy on your eyes.</h3>
-              <p>Atkinson Hyperlegible and OpenDyslexic are built in. A reading ruler keeps your place on one line.</p>
+            <div class="h-stage"><img class="h-shot" src="assets/images/stage/tutor-answer.webp" alt="Olly summarizing a story in a few simple points" width="539" height="733" loading="lazy" style="--w:250px" /></div>
+          </article>
+          <article class="h-card">
+            <div class="h-card__text">
+              <h3>Make the page yours</h3>
+              <p>Pick a font, a size, a color, and a reading ruler.</p>
             </div>
-            <figure class="demo-frame">
-              <div class="device">
-                <video data-feature-video muted loop playsinline controls preload="metadata" poster="assets/videos/tour/customize-poster.webp" aria-label="Screen recording: the font changes to OpenDyslexic, the theme changes to yellow, and a reading ruler follows the line">
-                <source src="assets/videos/tour/customize.mp4" type="video/mp4" />
-              </video>
-                <img class="device__bezel" src="assets/images/devices/bezel-iphone.webp" alt="" width="675" height="1380" loading="lazy" />
-              </div>
-            </figure>
-          </li>
-        </ol>
-      </section>
-
-      <section class="shell devices" id="devices" aria-labelledby="devices-title">
-        <header class="head-hang">
-          <h2 id="devices-title">Read on iPad, Mac, and iPhone Duo too.</h2>
-          <p>One App Store download covers all of them.</p>
-        </header>
-        <div class="device-grid">
-          <figure class="device-grid__wide">
-            <img src="assets/images/devices/mac.webp" alt="DyslexiaBuddy on a MacBook, with the Home screen in a window" width="1400" height="855" loading="lazy" />
-            <figcaption><strong>Mac</strong> Read a PDF in a window next to your other work.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/images/devices/ipad.webp" alt="DyslexiaBuddy on iPad with a full page of a story" width="900" height="1173" loading="lazy" />
-            <figcaption><strong>iPad</strong> A full page fits on the screen.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/images/devices/duo.webp" alt="DyslexiaBuddy on an open iPhone Duo with the voice list over a story" width="1200" height="871" loading="lazy" />
-            <figcaption><strong>iPhone Duo</strong> Open the phone and the text spreads across the wide screen.</figcaption>
-          </figure>
+            <div class="h-stage"><img class="h-shot" src="assets/images/stage/customize-theme.webp" alt="A page in a dyslexia-friendly font on a yellow background, with a focus line" width="539" height="788" loading="lazy" style="--w:232px" /></div>
+          </article>
+          <article class="h-card h-card--dark">
+            <div class="h-card__text">
+              <h3>14 free classic books</h3>
+              <p>Start with The Tale of Peter Rabbit before you scan anything.</p>
+            </div>
+            <div class="h-stage h-stage--lib">
+              <img class="h-shot h-shot--a" src="assets/images/stage/lib-start.webp" alt="Start here card for The Tale of Peter Rabbit" width="720" height="402" loading="lazy" />
+              <img class="h-shot h-shot--b" src="assets/images/stage/lib-covers.webp" alt="Book covers for Peter Rabbit, Benjamin Bunny, and Squirrel Nutkin" width="720" height="450" loading="lazy" />
+            </div>
+          </article>
         </div>
       </section>
 
-      <section class="capabilities" aria-labelledby="capabilities-title">
-        <div class="shell capabilities__inner">
-          <h2 id="capabilities-title">More that comes with the app</h2>
-          <ul class="capability-list">
-            <li><strong>Highlights and notes</strong><span>Select a line, tap Highlight, and add a note in your own words.</span></li>
-            <li><strong>Works without internet</strong><span>Scanning, read-aloud, and word meanings run on your device.</span></li>
-            <li><strong>A daily reading reminder</strong><span>Turn it on and the app brings you back to your page.</span></li>
-            <li><strong>Your place is saved</strong><span>Each text opens where you stopped.</span></li>
+      <section class="h-import" id="import" aria-labelledby="import-title">
+        <div class="h-shell">
+          <header class="h-head">
+            <h2 id="import-title">From paper to listening in seconds.</h2>
+            <p>However the page reaches you, there is a quick way to get it in.</p>
+          </header>
+          <ul class="h-ways">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M8 10h8M8 14h5"/></svg><h3>Point your camera</h3><p>Hold your phone over a page and tap the words you want to hear. No photo needed.</p></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M3 12h18"/></svg><h3>Scan pages</h3><p>Scan a whole worksheet or chapter. Each page is cleaned up and ready to read.</p></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="m21 16-5-5-8 8"/></svg><h3>Pick a photo</h3><p>Use a picture of the board or a screenshot you already have.</p></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><h3>Open a PDF</h3><p>Bring in a PDF or an image from the Files app.</p></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><h3>Ask Siri</h3><p>Say "Read this" and your page starts, or you go back to where you stopped.</p></li>
           </ul>
         </div>
       </section>
 
-      <section class="shell pricing" id="pricing" aria-labelledby="pricing-title">
-        <header class="pricing__head">
-          <h2 id="pricing-title">Free to download. Premium is $3.99 a month.</h2>
-          <p>Premium starts with a 7-day free trial. You can also pay $39.99 a year or $69.99 once.</p>
-        </header>
-
-        <ul class="price-list">
-          <li class="price-row">
-            <h3>Free</h3>
-            <p>Scanning, PDF import, the Library, reading settings, Word Card meanings, and read-aloud with the voices on your device.</p>
-            <span class="price-row__amount">$0</span>
-          </li>
-          <li class="price-row">
-            <h3>Premium</h3>
-            <p>Olly the tutor, 28 AI voices, and pictures on the Word Card.</p>
-            <span class="price-row__amount">$3.99</span>
-          </li>
-        </ul>
-
-        <div class="pricing__action">
-          <a
-            class="button"
-            href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172"
-            target="_blank"
-            rel="noopener noreferrer"
-          >View in App Store</a>
-          <p>Prices shown in USD and may vary by region.</p>
+      <section class="h-section h-shell" id="devices" aria-labelledby="devices-title">
+        <h2 id="devices-title">One app on every Apple device.</h2>
+        <div class="h-tabs" role="tablist" aria-label="Devices">
+          <button type="button" role="tab" id="tab-iphone" aria-controls="panel-iphone" aria-selected="false" tabindex="-1">iPhone</button>
+          <button type="button" role="tab" id="tab-ipad" aria-controls="panel-ipad" aria-selected="false" tabindex="-1">iPad</button>
+          <button type="button" role="tab" id="tab-mac" aria-controls="panel-mac" aria-selected="true">Mac</button>
+          <button type="button" role="tab" id="tab-duo" aria-controls="panel-duo" aria-selected="false" tabindex="-1">iPhone Duo</button>
+        </div>
+        <div class="h-panel" role="tabpanel" id="panel-iphone" aria-labelledby="tab-iphone" hidden>
+          <div class="h-panel__text"><h3>iPhone</h3><p>Scan a worksheet with the camera and hear it read aloud right away.</p></div>
+          <img class="h-panel__img h-panel__img--tall" src="assets/images/devices/ph-library.webp" alt="DyslexiaBuddy on iPhone, showing the Library" width="675" height="1380" loading="lazy" />
+        </div>
+        <div class="h-panel" role="tabpanel" id="panel-ipad" aria-labelledby="tab-ipad" hidden>
+          <div class="h-panel__text"><h3>iPad</h3><p>A full page fits on the screen, so you lose your place less.</p></div>
+          <img class="h-panel__img h-panel__img--tall" src="assets/images/devices/ipad.webp" alt="DyslexiaBuddy on iPad with a full page of a story" width="900" height="1173" loading="lazy" />
+        </div>
+        <div class="h-panel" role="tabpanel" id="panel-mac" aria-labelledby="tab-mac">
+          <div class="h-panel__text"><h3>Mac</h3><p>Read a PDF in a window next to your other work.</p></div>
+          <img class="h-panel__img" src="assets/images/devices/mac.webp" alt="DyslexiaBuddy on a MacBook, with the Home screen in a window" width="1400" height="855" loading="lazy" />
+        </div>
+        <div class="h-panel" role="tabpanel" id="panel-duo" aria-labelledby="tab-duo" hidden>
+          <div class="h-panel__text"><h3>iPhone Duo</h3><p>Open the phone and the text spreads across the wide screen.</p></div>
+          <img class="h-panel__img" src="assets/images/devices/duo.webp" alt="DyslexiaBuddy on an open iPhone Duo with the voice list over a story" width="1200" height="871" loading="lazy" />
         </div>
       </section>
 
-      <section class="faq" aria-labelledby="faq-title">
-        <div class="shell">
-          <header class="faq__head">
-            <h2 id="faq-title">Questions from parents and teachers</h2>
+      <section class="h-pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="h-shell">
+          <header class="h-head">
+            <h2 id="pricing-title">Free to download. Upgrade when you are ready.</h2>
+            <p>Try every feature free for 7 days. Cancel any time in your Apple account settings.</p>
           </header>
-
-          <div class="faq-list">
-            <details>
-              <summary>Is DyslexiaBuddy only for children?</summary>
-              <p>No. Adults use it for work documents and study material too.</p>
-            </details>
-            <details>
-              <summary>Can the app work offline?</summary>
-              <p>Yes. Scanning, read-aloud, and word meanings work without an internet connection.</p>
-            </details>
-            <details>
-              <summary>Which devices are supported?</summary>
-              <p>iPhone, iPad, and Mac, on iOS 26 or later. Olly needs a device with Apple Intelligence.</p>
-            </details>
-            <details>
-              <summary>Are there books to read in the app?</summary>
-              <p>Yes. The Library tab groups its free books by age, from first stories for ages 5 to 7 to novels for ages 10 and up.</p>
-            </details>
-            <details>
-              <summary>Is there a free trial?</summary>
-              <p>Yes. Premium is free for 7 days, and you can cancel in your Apple account settings.</p>
-            </details>
+          <div class="h-plans">
+            <article class="h-plan">
+              <h3>Free</h3>
+              <p class="h-plan__price">$0</p>
+              <ul>
+                <li>Scan pages and import PDFs</li>
+                <li>Read aloud with the voices on your device</li>
+                <li>Word meanings in Word Card</li>
+                <li>Fonts, colors, and the reading ruler</li>
+                <li>14 free classic books</li>
+              </ul>
+            </article>
+            <article class="h-plan h-plan--premium" data-plans>
+              <h3>Premium</h3>
+              <div class="h-switch" role="radiogroup" aria-label="Premium plan">
+                <button type="button" role="radio" aria-checked="false" data-plan="monthly">Monthly</button>
+                <button type="button" role="radio" aria-checked="true" data-plan="yearly">Yearly</button>
+                <button type="button" role="radio" aria-checked="false" data-plan="lifetime">Lifetime</button>
+              </div>
+              <p class="h-plan__price"><span data-plan-price>$39.99</span> <span class="h-plan__per" data-plan-per>a year</span></p>
+              <p class="h-plan__note" data-plan-note>About $3.33 a month, so you save about two months.</p>
+              <ul>
+                <li>Everything in Free</li>
+                <li>28 AI voices that sound closer to a person</li>
+                <li>Olly, the reading tutor</li>
+                <li>Pictures in Word Card</li>
+              </ul>
+              <a class="h-pill h-pill--light" href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer">Start your free week</a>
+            </article>
           </div>
+          <p class="h-fine">Prices in USD. They may be different in your region.</p>
         </div>
+      </section>
+
+      <section class="h-section h-shell h-faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions</h2>
+        <details>
+          <summary>Is DyslexiaBuddy free?</summary>
+          <p>Yes. Scanning, read-aloud with your device's voices, word meanings, and the Library are free.</p>
+        </details>
+        <details>
+          <summary>Can I try Premium first?</summary>
+          <p>Yes. Every feature, including the AI voices and Olly, is free for 7 days. Cancel in your Apple account settings before the week ends and you pay nothing.</p>
+        </details>
+        <details>
+          <summary>Does it work offline?</summary>
+          <p>Yes. Scanning, read-aloud, and word meanings work without an internet connection.</p>
+        </details>
+        <details>
+          <summary>Which devices are supported?</summary>
+          <p>iPhone, iPad, and Mac, on iOS 26 or later. Olly needs a device with Apple Intelligence.</p>
+        </details>
+        <details>
+          <summary>Is it only for children?</summary>
+          <p>No. Adults use it for work documents and study material too.</p>
+        </details>
       </section>
     </main>
 
-    <footer class="foot-stmt" id="footer">
-      <div class="shell foot-stmt__inner">
-        <p class="foot-stmt__line">Try it on the page you have to read tonight.</p>
-        <p><a class="button" href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer">Download free</a></p>
-        <div class="foot-stmt__meta">
-          <div class="foot-links" aria-label="Footer links">
-            <a href="/blog">Blog</a>
-            <a href="/privacy">Privacy</a>
-            <a href="/contact">Contact</a>
-            <a href="/sitemap">Sitemap</a>
-            <a href="https://impresskit.net/fc8d5e9c-7540-43bb-a03c-cdab3ec7bc8a" target="_blank" rel="noopener noreferrer">Press kit</a>
-            <a href="https://dl.acm.org/doi/10.1145/3441852.3476530" target="_blank" rel="noopener noreferrer">Research</a>
-          </div>
-          <p class="copyright">© 2026 Onlabs Infotech</p>
-        </div>
+    <footer class="h-foot" id="footer">
+      <div class="h-shell h-foot__cta">
+        <img src="assets/images/app/icon-256.png" alt="" width="96" height="96" class="h-foot__icon" />
+        <h2>Reading can feel easier, starting tonight.</h2>
+        <p>Download it, open a free story or scan tonight's homework, and press play. Every feature is free for 7 days.</p>
+        <a class="h-badge" href="https://apps.apple.com/us/app/dyslexiabuddy/id1565832172" target="_blank" rel="noopener noreferrer">
+          <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" width="178" height="60" />
+        </a>
+      </div>
+      <div class="h-shell h-foot__meta">
+        <nav class="h-foot__links" aria-label="Footer links">
+          <a href="/blog">Blog</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/contact">Contact</a>
+          <a href="/sitemap">Sitemap</a>
+          <a href="https://impresskit.net/fc8d5e9c-7540-43bb-a03c-cdab3ec7bc8a" target="_blank" rel="noopener noreferrer">Press kit</a>
+          <a href="https://dl.acm.org/doi/10.1145/3441852.3476530" target="_blank" rel="noopener noreferrer">Research</a>
+        </nav>
+        <p>© 2026 Onlabs Infotech</p>
       </div>
     </footer>
 
     <script>
       (() => {
-        const videos = document.querySelectorAll('[data-feature-video]');
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (!videos.length || reduceMotion || !('IntersectionObserver' in window)) return;
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            const video = entry.target;
-            if (entry.isIntersecting) {
-              video.play().catch(() => {});
-            } else {
-              video.pause();
-            }
+        // Voice samples
+        const buttons = document.querySelectorAll('[data-voice]');
+        const status = document.querySelector('[data-voice-status]');
+        let audio = null;
+        let current = null;
+        const stop = () => {
+          if (current) current.removeAttribute('aria-pressed');
+          current = null;
+          if (status) status.textContent = '';
+        };
+        buttons.forEach((btn) => {
+          btn.setAttribute('aria-label', 'Play ' + btn.textContent.trim() + ', ' + btn.dataset.desc);
+          btn.addEventListener('click', () => {
+            if (audio) audio.pause();
+            if (current === btn) { stop(); return; }
+            stop();
+            audio = new Audio('assets/audio/voices/' + btn.dataset.voice + '.m4a');
+            current = btn;
+            btn.setAttribute('aria-pressed', 'true');
+            status.textContent = 'Now playing: ' + btn.textContent.trim() + ', ' + btn.dataset.desc;
+            const mine = audio;
+            audio.addEventListener('ended', () => { if (audio === mine) stop(); });
+            audio.play().catch(stop);
           });
-        }, { rootMargin: '120px 0px', threshold: 0.35 });
+        });
 
-        videos.forEach((video) => observer.observe(video));
+        // Device tabs
+        const tabs = [...document.querySelectorAll('.h-tabs [role="tab"]')];
+        const select = (tab) => {
+          tabs.forEach((t) => {
+            const on = t === tab;
+            t.setAttribute('aria-selected', on);
+            t.tabIndex = on ? 0 : -1;
+            document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+          });
+        };
+        tabs.forEach((tab, i) => {
+          tab.addEventListener('click', () => select(tab));
+          tab.addEventListener('keydown', (e) => {
+            const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+            if (!d) return;
+            const next = tabs[(i + d + tabs.length) % tabs.length];
+            select(next);
+            next.focus();
+          });
+        });
+
+        // Premium plan switch
+        const plans = {
+          monthly: ['$3.99', 'a month', 'Cancel any time.'],
+          yearly: ['$39.99', 'a year', 'About $3.33 a month, so you save about two months.'],
+          lifetime: ['$69.99', 'once', 'Pay one time and keep Premium.']
+        };
+        const planButtons = document.querySelectorAll('[data-plan]');
+        planButtons.forEach((b) => b.addEventListener('click', () => {
+          planButtons.forEach((o) => o.setAttribute('aria-checked', o === b));
+          const [price, per, note] = plans[b.dataset.plan];
+          document.querySelector('[data-plan-price]').textContent = price;
+          document.querySelector('[data-plan-per]').textContent = per;
+          document.querySelector('[data-plan-note]').textContent = note;
+        }));
       })();
     </script>
   </body>
